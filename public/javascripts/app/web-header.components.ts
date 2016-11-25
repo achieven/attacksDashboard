@@ -6,5 +6,8 @@ import {Input, Component} from 'angular2/core';
 })
 
 export class WebHeaderComponent {
-    @Input() header='';
+    header: string = '';
+    @Input() set _header(_header: string){
+        this.header = _header
+    }
 }
