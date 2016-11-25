@@ -10,8 +10,11 @@
     "noImplicitAny": false
   },
   "exclude": [
+    "public/stylesheets",
     "node_modules",
+    "attacksDashboard",
     "typings/main",
-    "typings/main.d.ts"
+    "typings/main.d.ts",
+    "views"
   ]
 }
