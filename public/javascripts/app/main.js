@@ -21,4 +21,3 @@ System.register(['angular2/platform/browser', './main-app.components.js', './mai
 });
 //bootstrap(DataRowComponent);
 //bootstrap(WebHeaderComponent) 
-//# sourceMappingURL=main.js.map

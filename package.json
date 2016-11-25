@@ -6,8 +6,9 @@
     "postinstall": "npm run typings install",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
-    "start": "concurrently \"node ./bin/www\" \"npm run tsc:w\"",
-    "typings": "typings"
+    "start": "concurrently \"node ./bin/www\" \"npm run gulp \"",
+    "typings": "typings",
+    "gulp": "gulp"
   },
   "dependencies": {
     "angular2": "^2.0.0-beta.17",
@@ -28,6 +29,10 @@
   "devDependencies": {
     "@types/core-js": "^0.9.34",
     "concurrently": "^3.1.0",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2",
+    "gulp-typescript": "^3.1.3",
+    "gulp-util": "^3.0.7",
     "lite-server": "^2.2.2",
     "typescript": "^2.0.10",
     "typings": "^2.0.0"

@@ -3,41 +3,44 @@ body {
     height: 100%;
 
     #main-header {
-        background-color: #111;
+        background-color: #213C52;
         width: 100%;
         height: 40px;
+        #intsights-header {
+            padding-left: 5px;
+            padding-top: 10px;
+            #int-header {
+                color: red;
+            }
+            #sights-header {
+                color: white;
+            }
+        }
+    }
+
+    #main-body-with-margins {
+        background-color: #182934;
+        width: 100%;
+        height: 100%;
+        #main-body-background {
+            background-color: #225279;
+            height: 100%;
+            margin-left: 5%;
+            margin-right: 5%;
+            #main-body {
+                padding-top: 5%;
+                padding-bottom: 5%;
+                padding-left: 2%;
+                padding-right: 2%;
+            }
+        }
     }
 }
 
 
-#intsights-header {
-    padding-left: 5px;
-    padding-top: 10px;
-}
 
-#int-header {
-    color: red;
-}
 
-#sights-header {
-    color: white;
-}
 
-#main-body-with-margins {
-    background-color: #182934;
-    width: 100%;
-    height: 100%;
-}
 
-#main-body-background {
-    background-color: #225279;
-    height: 100%;
-    margin-left: 5%;
-    margin-right: 5%;
-}
-#main-body {
-    padding-top: 5%;
-    padding-bottom: 5%;
-    padding-left: 2%;
-    padding-right: 2%;
-}
+
+

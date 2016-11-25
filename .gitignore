@@ -4,6 +4,7 @@ npm-debug.log
 tudo.txt
 *.components.js
 *.components.js.map
+*.css
 public/images/
 public/javascripts/compiled
 attacksDashboard

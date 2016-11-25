@@ -5,6 +5,4 @@ import {Input, Component} from 'angular2/core';
     templateUrl: 'templates/types-data.html'
 })
 
-export class TypesDataComponent {
-   // @Input() header='';
-}
+export class TypesDataComponent {}
