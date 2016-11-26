@@ -1,5 +1,5 @@
 import {Input, Component} from 'angular2/core';
-// import {Image} from '../../images/webImage.png'
+ //import {Image} from '../../images/webImage.png'
 import {TypesDataRowComponent} from './types-data-row.components.js'
 
 @Component({
@@ -19,36 +19,36 @@ export class TypesDataComponent {
                 {
                     header: 'Attack Indication',
                     number: _data.AttackIndication,
-                    //image: Image
+                    imagePath: 'images/webImage.png'
                 },
                 {
                     header: 'Data Leakage',
                     number: _data.DataLeakage,
-                    //image: Image
+                    imagePath: 'images/webImage.png'
                 }
             ]
             this.secondRow = [
                 {
                     header: 'Phishing',
                     number: _data.Phishing,
-                    //image: Image
+                    imagePath: 'images/webImage.png'
                 },
                 {
                     header: 'Brand Security',
                     number: _data.BrandSecurity,
-                    //image: Image
+                    imagePath: 'images/webImage.png'
                 }
             ]
             this.thirdRow = [
                 {
                     header: 'Exploitable Data',
                     number: _data.ExploitableData,
-                    //image: Image
+                    imagePath: 'images/webImage.png'
                 },
                 {
                     header: 'vip',
                     number: _data.vip,
-                    //image: Image
+                    imagePath: 'images/webImage.png'
                 }
             ]
         }

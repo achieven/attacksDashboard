@@ -8,11 +8,13 @@ import {Input, Component} from 'angular2/core';
 export class TypesDataElementComponent {
     header: string = '';
     number: number = 0;
+    imagePath: string = '';
 
     @Input() set _data(_data:any) {
         if(_data){
             this.header = _data.header;
             this.number = _data.number;
+            this.imagePath = _data.imagePath;
         }
     }
 }
