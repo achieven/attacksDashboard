@@ -1,0 +1,19 @@
+<div class="data-header-container">
+    <div class="data-header">
+        {{header}}
+    </div>
+</div>
+<div class="data-content-container">
+    <div class="data-content-padding">
+        <div *ngIf="header === 'Types'">
+            <types-data [_data]="data"></types-data>
+        </div>
+        <div *ngIf="header === 'Severities'">
+            <severities-data [_data]="data"></severities-data>
+        </div>
+        <div *ngIf="header === 'Sources'">
+            <sources-data [_data]="data"></sources-data>
+        </div>
+    </div>
+</div>
+
