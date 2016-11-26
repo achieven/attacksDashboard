@@ -1,6 +1,12 @@
 <div class="severities-data-row-container">
-    <severities-data-element [_data]="highElement"></severities-data-element>
-    <severities-data-element [_data]="mediumElement"></severities-data-element>
-    <severities-data-element [_data]="lowElement"></severities-data-element>
+    <div class="severities-data-element-container-high">
+        <severities-data-element [_data]="highElement"></severities-data-element>
+    </div>
+    <div class="centralize-element-horizontally">
+        <severities-data-element [_data]="mediumElement"></severities-data-element>
+    </div>
+    <div class="severities-data-element-container-low">
+        <severities-data-element [_data]="lowElement"></severities-data-element>
+    </div>
 </div>
 

@@ -12,12 +12,20 @@
   .web-header {
     width: 10%;
     float: left;
-    .web-header-element-div {
+    .web-header-element-container {
       width: 100%;
-      .web-header-label {
-        color: white;
-        text-align: center;
-        font-size: 1.5vw;
+      .web-header-label-container {
+        height: 20%;
+        position: relative;
+        .web-header-label {
+          font-size: 18px;
+          width: 100%;
+          text-align: center;
+
+          @media screen and (max-width: 767px){
+            font-size: 12px;
+          }
+        }
       }
       .web-header-image {
         width: 100%;
@@ -47,13 +55,12 @@
     background-color: #213C52;
     position: relative;
     .data-header {
-      color: white;
-      position: absolute;
-      top: 50%;
-      transform: translate(20%, -50%);
-      -webkit-transform: translate(20%, -50%);
-      -moz-transform: translate(20%, -50%);
-      -o-transform: translate(20%, -50%);
+      padding-left: 5%;
+
+      transform: translate(0%, -50%);
+      -webkit-transform: translate(0%, -50%);
+      -moz-transform: translate(0%, -50%);
+      -o-transform: translate(0%, -50%);
     }
   }
   .data-content-container {
@@ -93,28 +100,12 @@
                 position: absolute;
                 left: 50%;
                 top: 33%;
-                transform: translate(-50%, -50%);
-                -webkit-transform: translate(-50%, -50%);
-                -moz-transform: translate(-50%, -50%);
-                -o-transform: translate(-50%, -50%);
               }
             }
           }
           .types-data-element-data-container {
             width: 80%;
             float: left;
-            .types-data-element-header {
-              color: white;
-              @media screen and (max-width: 767px) {
-                font-size: 8px;
-              }
-            }
-            .types-data-element-number {
-              color: white;
-              @media screen and (max-width: 767px) {
-                font-size: 8px;
-              }
-            }
           }
         }
       }
@@ -124,6 +115,17 @@
       }
       .severities-data-row-container {
         height: 30%;
+        margin-left: 5%;
+        margin-right: 5%;
+        position: relative;
+        .severities-data-element-container-high {
+          position: absolute;
+          left: 0;
+        }
+        .severities-data-element-container-low {
+          position: absolute;
+          right: 0;
+        }
       }
     }
   }
@@ -133,6 +135,37 @@
   img, circle {
     display: none;
   }
+  .attacks-dashboard-data-text {
+    font-size: 8px;
+  }
+}
+
+.centralize-element-horizontally-vertically {
+  position: absolute;
+  top: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+
+.centralize-element-vertically {
+  position: absolute;
+  top: 50%;
+  transform: translate(0%, -50%);
+  -webkit-transform: translate(0%, -50%);
+  -moz-transform: translate(0%, -50%);
+  -o-transform: translate(0%, -50%);
+}
+
+.centralize-element-horizontally {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  -webkit-transform: translate(-50%, -0%);
+  -moz-transform: translate(-50%, -0%);
+  -o-transform: translate(-50%, -0%);
 }
 
 
