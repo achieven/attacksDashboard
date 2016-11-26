@@ -1,72 +1,129 @@
 .data-row {
-    width: 100%;
-    height: 35%;
+  width: 100%;
+  height: 35%;
+  float: left;
+  padding-bottom: 15px;
+
+  .data-presentation {
+    padding-right: 0.5%;
+    padding-left: 0.5%;
+  }
+
+  .web-header {
+    width: 10%;
     float: left;
-    padding-bottom: 15px;
-
-    .data-presentation {
-        padding-right: 0.5%;
-        padding-left: 0.5%;
-    }
-
-    .web-header {
-        width: 10%;
-        float: left;
-        .web-header-element-div {
-            width: 100%;
-            .web-header-label {
-                color: white;
-                text-align: center;
-                font-size: 1.5vw;
-            }
-            .web-header-image {
-                width: 100%;
-                height: 100%;
-            }
-        }
-    }
-
-    .types-data {
+    .web-header-element-div {
+      width: 100%;
+      .web-header-label {
+        color: white;
+        text-align: center;
+        font-size: 1.5vw;
+      }
+      .web-header-image {
+        width: 100%;
         height: 100%;
-        width: 35%;
-        float: left;
+      }
     }
-    .severities-data {
-        width: 35%;
-        float: left;
+  }
+
+  .types-data {
+    height: 100%;
+    width: 35%;
+    float: left;
+  }
+  .severities-data {
+    width: 35%;
+    float: left;
+  }
+  .sources-data {
+    width: 16%;
+    float: left;
+  }
+  .data-header-container {
+    width: 100%;
+    height: 20%;
+    background-color: #213C52;
+    position: relative;
+    .data-header {
+      color: white;
+      position: absolute;
+      top: 50%;
+      transform: translate(20%, -50%);
+      -webkit-transform: translate(20%, -50%);
+      -moz-transform: translate(20%, -50%);
+      -o-transform: translate(20%, -50%);
     }
-    .sources-data {
-        width: 16%;
-        float: left;
-    }
-    .data-header-container {
+  }
+  .data-content-container {
+    background-color: #224A6B;
+    height: 80%;
+    width: 100%;
+    .data-content-padding {
+      padding: 10px;
+      .types-data-row {
         width: 100%;
-        height: 20%;
-        background-color: #213C52;
-        position: relative;
-        .data-header {
-            color: white;
-            position: absolute;
-            top: 50%;
-            transform: translate(20%, -50%);
-            -webkit-transform: translate(20%, -50%);
-            -moz-transform: translate(20%, -50%);
-            -o-transform: translate(20%, -50%);
+        height: 33%;
+        .types-data-element {
+          width: 50%;
+          float: left;
+          .types-data-element-image-container {
+            width: 20%;
+            float: left;
+            .image-circle-non-svg-container {
+              position: relative;
+              .image-circle-container {
+                height: 100%;
+                width: 100%;
+                .image-circle {
+                  stroke: white;
+                  fill: #224A6B;
+                  stroke-width: 2;
+                  cx: 50%;
+                  cy: 33%;
+                  r: 33%;
+                  position: relative;
+                }
+              }
+              .types-data-image {
+                width: 40%;
+                height: 40%;
+                position: absolute;
+                left: 50%;
+                top: 33%;
+                transform: translate(-50%, -50%);
+                -webkit-transform: translate(-50%, -50%);
+                -moz-transform: translate(-50%, -50%);
+                -o-transform: translate(-50%, -50%);
+              }
+            }
+          }
+          .types-data-element-data-container {
+            width: 80%;
+            float: left;
+            .types-data-element-header {
+              color: white;
+              @media screen and (max-width: 767px) {
+                font-size: 8px;
+              }
+            }
+            .types-data-element-number {
+              color: white;
+              @media screen and (max-width: 767px) {
+                font-size: 8px;
+              }
+            }
+          }
         }
+      }
     }
-    .data-content-container {
-        background-color: #224A6B;
-        height: 80%;
-        width: 100%;
-        .data-content-padding {
-            padding: 10px;
-        }
-    }
+  }
 }
 
-
-
-
+@media screen and (max-width: 768px) {
+  img, svg {
+    display: none;
+  }
+}
 
 
 

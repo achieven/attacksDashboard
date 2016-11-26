@@ -1,27 +1,56 @@
 import {Input, Component} from 'angular2/core';
-
+// import {Image} from '../../images/webImage.png'
+import {TypesDataRowComponent} from './types-data-row.components.js'
 
 @Component({
     selector: 'types-data',
-    templateUrl: 'templates/types-data.html'
+    templateUrl: 'templates/types-data.html',
+    directives: [TypesDataRowComponent]
 })
 
 export class TypesDataComponent {
-    attackIndication:number = 0;
-    dataLeakage:number = 0;
-    phishing:number = 0;
-    brandSecurity:number = 0;
-    exploitableData:number = 0;
-    vip:number = 0;
+    firstRow: Object = {}
+    secondRow: Object = {}
+    thirdRow: Object = {}
 
     @Input() set _data(_data:any) {
         if (_data) {
-            this.attackIndication = _data.AttackIndication;
-            this.dataLeakage = _data.DataLeakage;
-            this.phishing = _data.AttackIndication;
-            this.brandSecurity = _data.BrandSecurity;
-            this.exploitableData = _data.ExploitableData;
-            this.vip = _data.vip;
+            this.firstRow = [
+                {
+                    header: 'Attack Indication',
+                    number: _data.AttackIndication,
+                    //image: Image
+                },
+                {
+                    header: 'Data Leakage',
+                    number: _data.DataLeakage,
+                    //image: Image
+                }
+            ]
+            this.secondRow = [
+                {
+                    header: 'Phishing',
+                    number: _data.Phishing,
+                    //image: Image
+                },
+                {
+                    header: 'Brand Security',
+                    number: _data.BrandSecurity,
+                    //image: Image
+                }
+            ]
+            this.thirdRow = [
+                {
+                    header: 'Exploitable Data',
+                    number: _data.ExploitableData,
+                    //image: Image
+                },
+                {
+                    header: 'vip',
+                    number: _data.vip,
+                    //image: Image
+                }
+            ]
         }
     }
 }
