@@ -30,31 +30,7 @@
         height: 100%;
         width: 35%;
         float: left;
-        .types-header-container {
-            width: 100%;
-            height: 20%;
-            background-color: #213C52;
-            position: relative;
-            .types-header {
-                color: white;
-                position: absolute;
-                top: 50%;
-                transform: translate(20%, -50%);
-                -webkit-transform: translate(20%, -50%);
-                -moz-transform: translate(20%, -50%);
-                -o-transform: translate(20%, -50%);
-            }
-        }
-        .types-content-container {
-            background-color: #224A6B;
-            height: 80%;
-            width: 100%;
-        }
     }
-
-
-
-
     .severities-data {
         width: 35%;
         float: left;
@@ -62,6 +38,29 @@
     .sources-data {
         width: 16%;
         float: left;
+    }
+    .data-header-container {
+        width: 100%;
+        height: 20%;
+        background-color: #213C52;
+        position: relative;
+        .data-header {
+            color: white;
+            position: absolute;
+            top: 50%;
+            transform: translate(20%, -50%);
+            -webkit-transform: translate(20%, -50%);
+            -moz-transform: translate(20%, -50%);
+            -o-transform: translate(20%, -50%);
+        }
+    }
+    .data-content-container {
+        background-color: #224A6B;
+        height: 80%;
+        width: 100%;
+        .data-content-padding {
+            padding: 10px;
+        }
     }
 }
 

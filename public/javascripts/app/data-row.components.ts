@@ -1,14 +1,12 @@
 import {Input, Component} from 'angular2/core';
 import {WebHeaderComponent} from './web-header.components.js'
-import {TypesDataComponent} from './types-data.components.js'
-import {SeveritiesDataComponent} from './severities-data.components.js'
-import {SourcesDataComponent} from './sources-data.components.js'
+import {DataBoxComponent} from './data-box.components.js'
 
 
 @Component({
     selector: 'data-row',
     templateUrl: 'templates/data-row.html',
-    directives: [WebHeaderComponent, TypesDataComponent, SeveritiesDataComponent, SourcesDataComponent]
+    directives: [WebHeaderComponent, DataBoxComponent]
 })
 
 export class DataRowComponent {
@@ -20,9 +18,9 @@ export class DataRowComponent {
     @Input() set _webData(_webData: any){
         if(_webData){
             this.header = _webData.header;
-            this.typesData = _webData.typesData;
-            this.severitiesData = _webData.severitiesData;
-            this.sourcesData = _webData.sourcesData;
+            this.typesData = $.extend({},_webData.typesData,{header: 'Types'});
+            this.severitiesData = $.extend({},_webData.severitiesData,{header: 'Severities'});
+            this.sourcesData = $.extend({},_webData.sourcesData,{header: 'Sources'});
         }
     }
 }
