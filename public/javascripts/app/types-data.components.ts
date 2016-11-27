@@ -19,36 +19,36 @@ export class TypesDataComponent {
                 {
                     header: 'Attack Indication',
                     number: _data.AttackIndication,
-                    imagePath: 'images/webImage.png'
+                    imagePath: 'images/attackIndication.png'
                 },
                 {
                     header: 'Data Leakage',
                     number: _data.DataLeakage,
-                    imagePath: 'images/webImage.png'
+                    imagePath: 'images/dataLeakage.png'
                 }
             ]
             this.secondRow = [
                 {
                     header: 'Phishing',
                     number: _data.Phishing,
-                    imagePath: 'images/webImage.png'
+                    imagePath: 'images/phishing.png'
                 },
                 {
                     header: 'Brand Security',
                     number: _data.BrandSecurity,
-                    imagePath: 'images/webImage.png'
+                    imagePath: 'images/brandSecurity.png'
                 }
             ]
             this.thirdRow = [
                 {
                     header: 'Exploitable Data',
                     number: _data.ExploitableData,
-                    imagePath: 'images/webImage.png'
+                    imagePath: 'images/exploitableData.png'
                 },
                 {
                     header: 'vip',
                     number: _data.vip,
-                    imagePath: 'images/webImage.png'
+                    imagePath: 'images/vip.png'
                 }
             ]
         }

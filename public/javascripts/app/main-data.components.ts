@@ -20,14 +20,16 @@ export class MainDataComponent {
                 typesData: data.ClearWeb.Types,
                 severitiesData: data.ClearWeb.Severities,
                 sourcesData: data.ClearWeb.Sources,
-                outerRowNumber: 1
+                outerRowNumber: 1,
+                headerImage: 'images/clearWeb.png'
             }
             thisComponent.darkWeb = {
                 header: 'Dark Web',
                 typesData: data.DarkWeb.Types,
                 severitiesData: data.DarkWeb.Severities,
                 sourcesData: data.DarkWeb.Sources,
-                outerRowNumber: 2
+                outerRowNumber: 2,
+                headerImage: 'images/darkWeb.png'
             }
         });
     }
