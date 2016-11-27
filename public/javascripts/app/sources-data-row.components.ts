@@ -31,18 +31,24 @@ export class SourcesDataRowComponent {
             }
         }).on('draw', function (data) {
             if (data.type === 'bar') {
-                var newStroke = 'stroke-width: 16px;'
+                var newStyle = 'stroke-width: 16px;'
                 var isSeriesA = data.element._node.parentElement.className.baseVal.indexOf('ct-series-a') > 0;
                 var isSeriesB = data.element._node.parentElement.className.baseVal.indexOf('ct-series-b') > 0
                 if (isSeriesA) {
-                    newStroke += 'stroke: #8AB4D4'
+                    newStyle += 'stroke: #8AB4D4'
                 }
                 else if (isSeriesB) {
-                    newStroke += 'stroke: #1D384B'
+                    newStyle += 'stroke: #1D384B'
                 }
                 data.element.attr({
-                    style: newStroke
+                    style: newStyle
                 })
+            }
+            if(data.type === 'label'){
+                data.element.attr({
+                    style: 'display: none;'
+                })
+                
             }
         })
     }
