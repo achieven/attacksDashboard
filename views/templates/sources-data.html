@@ -1,7 +1,3 @@
-<!--<div class="data-header-container">-->
-    <!--<div class="data-header">-->
-        <!--Sources-->
-    <!--</div>-->
-<!--</div>-->
-<!--<div class="data-content-container"></div>-->
-456
+<div *ngFor="let source of data">
+    <sources-data-row [_data]="source"></sources-data-row>
+</div>

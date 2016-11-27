@@ -22,31 +22,31 @@
           width: 100%;
           text-align: center;
 
-          @media screen and (max-width: 767px){
+          @media screen and (max-width: 767px) {
             font-size: 12px;
           }
         }
       }
       .web-header-image {
         width: 100%;
-        height: 100%;
+        height: 80%;
       }
     }
   }
 
   .types-data {
     height: 100%;
-    width: 35%;
+    width: 33%;
     float: left;
   }
   .severities-data {
     height: 100%;
-    width: 35%;
+    width: 33%;
     float: left;
   }
   .sources-data {
     height: 100%;
-    width: 16%;
+    width: 20%;
     float: left;
   }
   .data-header-container {
@@ -127,6 +127,44 @@
           right: 0;
         }
       }
+      //sources
+      .sources-data-row-container {
+        height: calc(18% - 4px);
+        padding-bottom: 2%;
+        .attacks-dashboard-sources-text {
+          font-size: 12px;
+          @media screen and(max-width: 767px) {
+            font-size: 8px;
+          }
+        }
+        .sources-data-row-header {
+          height: 50%;
+          width: 100%;
+        }
+        .sources-data-row-bar-value {
+          height: 50%;
+          width: 100%;
+          position: relative;
+          .sources-data-row-bar-container {
+            width: 80%;
+            position: absolute;
+            left: 0%;
+            transform: translate(0%, 0%);
+            -webkit-transform: translate(0%, -0%);
+            -moz-transform: translate(0%, -0%);
+            -o-transform: translate(0%, -0%);
+          }
+          .sources-data-row-value-container {
+            width: calc(20%);
+            position: absolute;
+            left: 80%;
+            transform: translate(80%, 0%);
+            -webkit-transform: translate(80%, -0%);
+            -moz-transform: translate(80%, -0%);
+            -o-transform: translate(80%, -0%);
+          }
+        }
+      }
     }
   }
 }
@@ -134,9 +172,6 @@
 @media screen and (max-width: 768px) {
   img, circle {
     display: none;
-  }
-  .attacks-dashboard-data-text {
-    font-size: 8px;
   }
 }
 

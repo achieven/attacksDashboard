@@ -11,7 +11,6 @@ export class SeveritiesDataElementComponent {
     value: number = 0;
 
     @Input() set _data(_data:any) {
-        console.log('##', _data)
         if(_data){
             this.header = _data.header;
             this.value = _data.value;

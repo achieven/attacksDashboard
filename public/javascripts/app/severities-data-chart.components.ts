@@ -11,7 +11,7 @@ export class SeveritiesDataChartComponent {
 
     @Input() set _data(_data:any) {
         if (_data) {
-            this.chartId = 'chart' + _data.rowNumber
+            this.chartId = 'chart' + _data.outerRowNumber
             this.data = _data;
         }
     }
