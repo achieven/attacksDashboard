@@ -74,7 +74,6 @@
     height: -o-calc(100% - #{$data-row-header-height});
     width: 100%;
     position: relative;
-    $types-data-element-data-words-position: 10px;
     .hr1 {
       position: absolute;
       left: 0;
@@ -108,12 +107,11 @@
           float: left;
           .types-data-element-image-container {
             width: 20%;
-
             float: left;
             margin-right: 5%;
             .image-circle-non-svg-container {
               position: relative;
-              height: 60%;
+              height: 70%;
               width: 100%;
               .image-circle-container {
                 height: 100%;
@@ -177,9 +175,7 @@
         }
       }
       .sources-data-row-container {
-        height: calc(18% - 4px);
-        height: -webkit-calc(18% - 4px);
-        height: -moz-calc(18% - 4px);
+        height: 17%;
         padding-bottom: 2%;
         .sources-row-data-header-value-container {
           height: 50%;
@@ -226,8 +222,8 @@
 }
 
 @media screen and (max-width: 768px) {
-  circle {
-    //display: none;
+  .types-data-element-image-container, circle {
+    display: none;
   }
 }
 

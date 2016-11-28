@@ -21,12 +21,12 @@ export class SourcesDataRowComponent {
     ngAfterViewInit() {
         var userAgent = navigator.userAgent
         var isFirefoxBrowser = userAgent.indexOf('Firefox') > -1;
-        if (isFirefoxBrowser) {
-            $('sources-data').html('<div class="attacks-dashboard-text"> Sorry!<br><br> This feature is currenlt not supported in Firefox.<br><br> Please use Chrome / Safari instead</div> <div class="attacks-dashboard-text" style="font-size: 50px">&#9786</div>')
+        if (false) {
+            //$('sources-data').html('<div class="attacks-dashboard-text"> Sorry!<br><br> This feature is currenlt not supported in Firefox.<br><br> Please use Chrome / Safari instead</div> <div class="attacks-dashboard-text" style="font-size: 50px">&#9786</div>')
         }
         else {
             var isIeBrowser = (userAgent.indexOf('Trident') > -1 && userAgent.indexOf('rv:11.0') > -1) || userAgent.indexOf('MSIE') > -1
-            if (!isIeBrowser) {
+            if (true) {
                 var chartSelector = '#' + this.chartId
                 new Chartist.Bar(chartSelector, {
                     series: [[this.value], [100 - this.value]]

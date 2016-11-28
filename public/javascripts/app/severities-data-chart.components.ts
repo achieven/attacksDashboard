@@ -27,7 +27,7 @@ export class SeveritiesDataChartComponent {
         }).on('draw', function(data) {
             var userAgent = navigator.userAgent
             var isIEOrFireFox = userAgent.indexOf('Firefox') > -1 || (userAgent.indexOf('Trident') > -1 && userAgent.indexOf('rv:11.0')> -1)  || userAgent.indexOf('MSIE') > -1
-            if(!isIEOrFireFox) {
+            //if(!isIEOrFireFox) {
                 if (data.type === 'slice') {
                     var pathLength = data.element._node.getTotalLength();
                     data.element.attr({
@@ -51,7 +51,7 @@ export class SeveritiesDataChartComponent {
                     });
                     data.element.animate(animationDefinition, false);
                 }
-            }
+           // }
         });;
 
     }
