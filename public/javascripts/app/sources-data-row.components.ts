@@ -19,37 +19,49 @@ export class SourcesDataRowComponent {
     }
 
     ngAfterViewInit() {
-        var chartSelector = '#' + this.chartId
+        var isFirefoxBrowser = /Firefox/i.test(navigator.userAgent);
+        if(isFirefoxBrowser){
+            $('.sources-data').attr('style', 'display:none')
+        }
+        else {
+            var chartSelector = '#' + this.chartId
+            new Chartist.Bar(chartSelector, {
+                series: [[this.value], [100 - this.value]]
+            }, {
+                stackBars: true,
+                horizontalBars: true,
+                showLabel: false,
+                axisY: {
+                    offset: 0
+                },
+                chartPadding: {
+                    bottom: 15,
+                }
+            }).on('draw', function (data) {
+                if (data.type === 'bar') {
+                    var newStyle = 'stroke-width: 12px;'
+                    var isSeriesA = data.element._node.parentElement.className.baseVal.indexOf('ct-series-a') > 0;
+                    var isSeriesB = data.element._node.parentElement.className.baseVal.indexOf('ct-series-b') > 0;
+                    var blueStroke = '#8AB4D4', blackStroke = '#1D384B'
+                    if (isSeriesA) {
+                        newStyle += 'stroke: ' + blueStroke
+                    }
+                    else if (isSeriesB) {
+                        newStyle += 'stroke: ' + blackStroke
+                    }
+                    data.element.attr({
+                        style: newStyle
+                    })
+                }
+                if(data.type === 'label'){
+                    data.element.attr({
+                        style: 'display: none;'
+                    })
 
-        new Chartist.Bar(chartSelector, {
-            series: [[this.value], [100 - this.value]]
-        }, {
-            stackBars: true,
-            horizontalBars: true,
-            axisY: {
-                offset: 0
-            }
-        }).on('draw', function (data) {
-            if (data.type === 'bar') {
-                var newStyle = 'stroke-width: 16px;'
-                var isSeriesA = data.element._node.parentElement.className.baseVal.indexOf('ct-series-a') > 0;
-                var isSeriesB = data.element._node.parentElement.className.baseVal.indexOf('ct-series-b') > 0
-                if (isSeriesA) {
-                    newStyle += 'stroke: #8AB4D4'
                 }
-                else if (isSeriesB) {
-                    newStyle += 'stroke: #1D384B'
-                }
-                data.element.attr({
-                    style: newStyle
-                })
-            }
-            if(data.type === 'label'){
-                data.element.attr({
-                    style: 'display: none;'
-                })
-                
-            }
-        })
+            })
+        }
+
+        
     }
 }

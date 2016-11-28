@@ -1,6 +1,6 @@
 .data-row {
   width: 100%;
-  height: 35%;
+  height: 40%;
   float: left;
   padding-bottom: 15px;
 
@@ -15,7 +15,7 @@
     .web-header-element-container {
       width: 100%;
       .web-header-label-container {
-        height: 20%;
+        height: 15%;
         position: relative;
         .web-header-label {
           font-size: 18px;
@@ -29,7 +29,7 @@
       }
       .web-header-image {
         width: 100%;
-        height: 80%;
+        height: 85%;
       }
     }
   }
@@ -51,12 +51,11 @@
   }
   .data-header-container {
     width: 100%;
-    height: 20%;
+    height: 15%;
     background-color: #213C52;
     position: relative;
     .data-header {
       padding-left: 5%;
-
       transform: translate(0%, -50%);
       -webkit-transform: translate(0%, -50%);
       -moz-transform: translate(0%, -50%);
@@ -65,50 +64,84 @@
   }
   .data-content-container {
     background-color: #224A6B;
-    height: 80%;
+    height: 85%;
     width: 100%;
+    position: relative;
+    .hr1 {
+      position: absolute;
+      left: 0;
+      top: calc(33% - 10px);
+      top: -moz-calc(33% - 10px);
+      top: -webkit-calc(33% - 10px);
+      width: 100%;
+      border-color: #1F3A4F;
+      display: inline;
+    }
+    .hr2 {
+      position: absolute;
+      left: 0;
+      top: calc(66% - 10px);
+      top: -moz-calc(66% - 10px);
+      top: -webkit-calc(66% - 10px);
+      width: 100%;
+      border-color: #1F3A4F;
+      display: inline;
+    }
     .data-content-padding {
       padding: 10px;
-      //types
       .types-data-row {
         width: 100%;
-        height: 33%;
+        height: 30%;
+        padding-bottom: 3%;
         .types-data-element {
           width: 50%;
           float: left;
           .types-data-element-image-container {
             width: 20%;
             float: left;
+            margin-right: 5%;
             .image-circle-non-svg-container {
               position: relative;
+              height: 60%;
+              width: 100%;
               .image-circle-container {
                 height: 100%;
                 width: 100%;
+                position: absolute;
+                left: 0;
+                top: 0;
                 .image-circle {
                   stroke: white;
                   fill: #224A6B;
                   stroke-width: 2;
-                  cx: 50%;
-                  cy: 33%;
-                  r: 33%;
                 }
               }
               .types-data-image {
-                width: 40%;
-                height: 40%;
-                position: absolute;
-                left: 50%;
-                top: 33%;
+                width: 33%;
+                height: 33%;
               }
             }
           }
           .types-data-element-data-container {
-            width: 80%;
+            width: 75%;
             float: left;
+            height: 100%;
+            position: relative;
+            .types-data-element-data-number {
+              //height: 33%;
+              position: absolute;
+              top: 0;
+              left: 0;
+            }
+            .types-data-element-data-words {
+              //height: 67%;
+              position: absolute;
+              bottom: 10px;
+              left: 0;
+            }
           }
         }
       }
-      //severities
       .severities-chart-container {
         height: 70%;
       }
@@ -126,9 +159,9 @@
           right: 0;
         }
       }
-      //sources
       .sources-data-row-container {
         height: calc(18% - 4px);
+        height: -webkit-calc(18% - 4px);
         padding-bottom: 2%;
         .attacks-dashboard-sources-text {
           font-size: 12px;
@@ -144,15 +177,15 @@
           height: 50%;
           width: 100%;
           position: relative;
-          transform: translate(-10px, -0%);
           .sources-data-row-bar-container {
             width: 100%;
             position: absolute;
-            left: 0%;
+            left: -10px;
           }
           .sources-data-row-value-container {
             position: absolute;
-            left: 100%;
+            right: 0;
+            top: 50%;
           }
         }
       }
@@ -168,7 +201,7 @@
 
 .centralize-element-horizontally-vertically {
   position: absolute;
-  top: 50%;
+  left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);

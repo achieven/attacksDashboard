@@ -2,15 +2,16 @@
     <div class="types-data-element-image-container">
         <div class="image-circle-non-svg-container">
             <svg class="image-circle-container">
-                <circle class="image-circle"/>
+                <circle cx="50%" cy="50%" r="33%" class="image-circle"/>
             </svg>
             <img src="{{imagePath}}" alt="" class="types-data-image centralize-element-horizontally-vertically">
         </div>
     </div>
     <div class="types-data-element-data-container">
-        <div class="types-data-element-data">
-            <div class="types-data-element-header attacks-dashboard-text">{{number}}</div>
-            <div class="types-data-element-number attacks-dashboard-text">{{header}}</div>
+        <div class="types-data-element-data-number attacks-dashboard-text">{{number}}</div>
+        <div class="types-data-element-data-words">
+            <div class="attacks-dashboard-text">{{firstWord}}</div>
+            <div class="attacks-dashboard-text">{{secondWord || ''}}</div>
         </div>
     </div>
 </div>
