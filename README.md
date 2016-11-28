@@ -1,4 +1,6 @@
-# Angular 2 Node Hello World  
+# Intsights
+
+
 
 To run app:    
 git clone https://github.com/achieven/attacksDashboard.git
