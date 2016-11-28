@@ -19,14 +19,19 @@ export class SeveritiesDataChartComponent {
 
     ngAfterViewInit() {
         var chartSelector = '#' + this.chartId
+        var isIeBrowser = Util.isIeBrowser()
         new Chartist.Pie(chartSelector, {
-            series: [this.data.High, this.data.Medium, this.data.Low]
+            series: [this.data.High, this.data.Medium, this.data.Low],
+            labels:['High', 'Medium', 'Low']
         }, {
             donut: true,
             donutWidth: '15%',
-            showLabel: false
+            showLabel: isIeBrowser,
+            labelInterpolationFnc: function(label, value) {
+                return label + ': ' + value
+            }
+            
         }).on('draw', function(data) {
-            var isIeBrowser = Util.isIeBrowser()
             if(!isIeBrowser) {
                 if (data.type === 'slice') {
                     var animateDonutPie = function(){

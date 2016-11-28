@@ -38,7 +38,7 @@ body {
         }
     }
     .attacks-dashboard-text {
-        color: white;
+        color: $attacks-dashboard-text-color;
         font-size: 14px;
         //font-family: "Times New Roman", Times, serif;
         @media screen and(max-width: 767px) {

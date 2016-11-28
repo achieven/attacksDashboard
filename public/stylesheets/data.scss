@@ -126,8 +126,8 @@
                 }
               }
               .types-data-image {
-                width: 33%;
-                height: 33%;
+                width: 40%;
+                height: 40%;
               }
             }
           }
@@ -159,6 +159,9 @@
       }
       .severities-chart-container {
         height: 70%;
+        .ct-chart-donut text{
+          fill: $attacks-dashboard-text-color;
+        }
       }
       .severities-data-row-container {
         height: 30%;
