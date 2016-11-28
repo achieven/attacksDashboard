@@ -99,10 +99,10 @@
       .types-data-row {
         width: 100%;
         height: $types-data-row-height;
-        margin-bottom: calc(33% - #{$types-data-row-height});
-        margin-bottom: -webkit-calc(33% - #{$types-data-row-height});
-        margin-bottom: -moz-calc(33% - #{$types-data-row-height});
-        margin-bottom: -o-calc(33% - #{$types-data-row-height});
+        padding-bottom: calc(33% - #{$types-data-row-height});
+        padding-bottom: -webkit-calc(33% - #{$types-data-row-height});
+        padding-bottom: -moz-calc(33% - #{$types-data-row-height});
+        padding-bottom: -o-calc(33% - #{$types-data-row-height});
         .types-data-element {
           width: 50%;
           float: left;
