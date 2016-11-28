@@ -10,17 +10,18 @@ import {DataBoxComponent} from './data-box.components.js'
 })
 
 export class DataRowComponent {
-    header: string = '';
+    header: Object = {};
+    image: string = '';
     typesData: Object = {};
     severitiesData: Object = {};
     sourcesData: Object = {};
     
     @Input() set _webData(_webData: any){
         if(_webData){
-            this.header = _webData.header;
+            this.header = {header: _webData.header, image: _webData.headerImage};
             this.typesData = $.extend({},_webData.typesData,{header: 'Types'});
-            this.severitiesData = $.extend({},_webData.severitiesData,{header: 'Severities',  rowNumber: _webData.rowNumber});
-            this.sourcesData = $.extend({},_webData.sourcesData,{header: 'Sources'});
+            this.severitiesData = $.extend({},_webData.severitiesData,{header: 'Severities',  outerRowNumber: _webData.outerRowNumber});
+            this.sourcesData = $.extend({},_webData.sourcesData,{header: 'Sources(%)',  outerRowNumber: _webData.outerRowNumber});
         }
     }
 }
