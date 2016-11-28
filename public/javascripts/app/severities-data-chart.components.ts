@@ -1,5 +1,5 @@
 import {Input, Component} from 'angular2/core';
-import {Util} from '../util/util.js';
+import {Util} from 'util/util.js';
 
 @Component({
     selector: 'severities-data-chart',

@@ -1,6 +1,6 @@
 import {Input, Component} from 'angular2/core';
 import {SourcesDataRowComponent} from './sources-data-row.components.js'
-import {Util} from '../util/util.js';
+import {Util} from 'util/util.js';
 
 @Component({
     selector: 'sources-data',
