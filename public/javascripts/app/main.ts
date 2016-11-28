@@ -6,5 +6,3 @@ import {WebHeaderComponent} from './web-header.components.js'
 
 bootstrap(MainAppComponent);
 bootstrap(MainDataComponent);
-//bootstrap(DataRowComponent);
-//bootstrap(WebHeaderComponent)

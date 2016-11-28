@@ -1,4 +1,5 @@
 import {Input, Component} from 'angular2/core';
+import {Util} from '../util/util.js';
 
 @Component({
     selector: 'severities-data-chart',
@@ -25,34 +26,36 @@ export class SeveritiesDataChartComponent {
             donutWidth: '15%',
             showLabel: false
         }).on('draw', function(data) {
-            var userAgent = navigator.userAgent
-            var isIEOrFireFox = userAgent.indexOf('Firefox') > -1 || (userAgent.indexOf('Trident') > -1 && userAgent.indexOf('rv:11.0')> -1)  || userAgent.indexOf('MSIE') > -1
-            if(!isIEOrFireFox) {
+            var isIeBrowser = Util.isIeBrowser()
+            if(!isIeBrowser) {
                 if (data.type === 'slice') {
-                    var pathLength = data.element._node.getTotalLength();
-                    data.element.attr({
-                        'stroke-dasharray': pathLength + 'px ' + pathLength + 'px'
-                    });
-                    var animationDefinition = {
-                        'stroke-dashoffset': {
-                            id: 'anim' + data.index,
-                            dur: 1000,
-                            from: -pathLength + 'px',
-                            to: '0px',
-                            easing: Chartist.Svg.Easing.easeOutQuint,
-                            fill: 'freeze'
+                    var animateDonutPie = function(){
+                        var pathLength = data.element._node.getTotalLength();
+                        data.element.attr({
+                            'stroke-dasharray': pathLength + 'px ' + pathLength + 'px'
+                        });
+                        var animationDefinition = {
+                            'stroke-dashoffset': {
+                                id: 'anim' + data.index,
+                                dur: 1000,
+                                from: -pathLength + 'px',
+                                to: '0px',
+                                easing: Chartist.Svg.Easing.easeOutQuint,
+                                fill: 'freeze'
+                            }
+                        };
+                        if (data.index !== 0) {
+                            animationDefinition['stroke-dashoffset'].begin = 'anim' + (data.index - 1) + '.end';
                         }
-                    };
-                    if (data.index !== 0) {
-                        animationDefinition['stroke-dashoffset'].begin = 'anim' + (data.index - 1) + '.end';
+                        data.element.attr({
+                            'stroke-dashoffset': -pathLength + 'px'
+                        });
+                        data.element.animate(animationDefinition, false);
                     }
-                    data.element.attr({
-                        'stroke-dashoffset': -pathLength + 'px'
-                    });
-                    data.element.animate(animationDefinition, false);
+                    animateDonutPie()
                 }
             }
-        });;
+        })
 
     }
 }

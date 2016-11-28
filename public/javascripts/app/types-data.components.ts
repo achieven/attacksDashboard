@@ -1,5 +1,4 @@
 import {Input, Component} from 'angular2/core';
- //import {Image} from '../../images/webImage.png'
 import {TypesDataRowComponent} from './types-data-row.components.js'
 
 @Component({

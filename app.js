@@ -8,7 +8,7 @@ app.use('/templates', express.static(__dirname + '/views/templates/'))
 app.use('/scripts', express.static(__dirname + '/node_modules/'));
 app.use('/css', express.static(__dirname + '/public/stylesheets/'))
 app.use('/images', express.static(__dirname + '/public/images/'))
-app.use('assets', express.static(__dirname + '/public/assets/'))
+app.use('/assets', express.static(__dirname + '/public/assets/'))
 app.use('/', routes);
 
 app.use(function(req, res, next) {

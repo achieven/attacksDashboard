@@ -13,45 +13,39 @@
   .web-header {
     width: $web-header-width;
     float: left;
-    .web-header-element-container {
-      width: 100%;
-      .web-header-label-container {
-        height: $data-row-header-height;
-        position: relative;
-        .web-header-label {
-          font-size: 18px;
-          width: 100%;
-          text-align: center;
-
-          @media screen and (max-width: 767px) {
-            font-size: 12px;
-          }
+    .web-header-label-container {
+      height: $data-row-header-height;
+      position: relative;
+      .web-header-label {
+        font-size: 18px;
+        width: 100%;
+        text-align: center;
+        @media screen and (max-width: 767px) {
+          font-size: 12px;
         }
       }
-      .web-header-image {
-        width: 100%;
-        height: calc(100% - #{$data-row-header-height});
-        height: -webkit-calc(100% - #{$data-row-header-height});
-        height: -moz-calc(100% - #{$data-row-header-height});
-        height: -o-calc(100% - #{$data-row-header-height});
-      }
+    }
+    .web-header-image {
+      width: 100%;
+      max-height: 100%;
+      height: auto;
     }
   }
 
   .types-data {
     height: 100%;
-    width: calc(((100% - #{$web-header-width} - #{$sources-data-width} - (#{$data-presentation-padding} * 8)) / 2);
-    width: -webkit-calc(((100% - #{$web-header-width} - #{$sources-data-width} - (#{$data-presentation-padding} * 8)) / 2);
-    width: -moz-calc(((100% - #{$web-header-width} - #{$sources-data-width} - (#{$data-presentation-padding} * 8)) / 2);
-    width: -o-calc(((100% - #{$web-header-width} - #{$sources-data-width} - (#{$data-presentation-padding} * 8)) / 2);
+    width: calc(((100% - #{$web-header-width} - #{$sources-data-width} - (#{$data-presentation-padding} * 8)) / 2 - 1px);
+    width: -webkit-calc(((100% - #{$web-header-width} - #{$sources-data-width} - (#{$data-presentation-padding} * 8)) / 2 - 1px);
+    width: -moz-calc(((100% - #{$web-header-width} - #{$sources-data-width} - (#{$data-presentation-padding} * 8)) / 2 - 1px);
+    width: -o-calc(((100% - #{$web-header-width} - #{$sources-data-width} - (#{$data-presentation-padding} * 8)) / 2 - 1px);
     float: left;
   }
   .severities-data {
     height: 100%;
-    width: calc(((100% - #{$web-header-width} - #{$sources-data-width} - (#{$data-presentation-padding} * 8)) / 2);
-    width: -webkit-calc(((100% - #{$web-header-width} - #{$sources-data-width} - (#{$data-presentation-padding} * 8)) / 2);
-    width: -moz-calc(((100% - #{$web-header-width} - #{$sources-data-width} - (#{$data-presentation-padding} * 8)) / 2);
-    width: -o-calc(((100% - #{$web-header-width} - #{$sources-data-width} - (#{$data-presentation-padding} * 8)) / 2);
+    width: calc(((100% - #{$web-header-width} - #{$sources-data-width} - (#{$data-presentation-padding} * 8)) / 2 - 1px);
+    width: -webkit-calc(((100% - #{$web-header-width} - #{$sources-data-width} - (#{$data-presentation-padding} * 8)) / 2 - 1px);
+    width: -moz-calc(((100% - #{$web-header-width} - #{$sources-data-width} - (#{$data-presentation-padding} * 8)) / 2 - 1px);
+    width: -o-calc(((100% - #{$web-header-width} - #{$sources-data-width} - (#{$data-presentation-padding} * 8)) / 2 - 1px);
     float: left;
   }
   .sources-data {
@@ -61,7 +55,7 @@
   }
   .data-header-container {
     width: 100%;
-    height: $data-row-header-height ;
+    height: $data-row-header-height;
     background-color: $header-background-color;
     position: relative;
     .data-header {
@@ -80,12 +74,11 @@
     height: -o-calc(100% - #{$data-row-header-height});
     width: 100%;
     position: relative;
-    $types-data-element-data-words-position: 10px;
     .hr1 {
       position: absolute;
       left: 0;
       top: calc(33% - #{$types-data-element-data-words-position});
-      top: -webkit-calc(33% -#{$types-data-element-data-words-position});
+      top: -webkit-calc(33% - #{$types-data-element-data-words-position});
       top: -moz-calc(33% - #{$types-data-element-data-words-position});
       top: -o-calc(33% - #{$types-data-element-data-words-position});
       width: 100%;
@@ -96,7 +89,7 @@
       position: absolute;
       left: 0;
       top: calc(66% - #{$types-data-element-data-words-position});
-      top: -webkit-calc(66% -#{$types-data-element-data-words-position});
+      top: -webkit-calc(66% - #{$types-data-element-data-words-position});
       top: -moz-calc(66% - #{$types-data-element-data-words-position});
       top: -o-calc(66% - #{$types-data-element-data-words-position});
       width: 100%;
@@ -118,7 +111,7 @@
             margin-right: 5%;
             .image-circle-non-svg-container {
               position: relative;
-              height: 60%;
+              height: 70%;
               width: 100%;
               .image-circle-container {
                 height: 100%;
@@ -157,7 +150,7 @@
               position: absolute;
               bottom: 24px;
               left: 0;
-              @media screen and (max-width: 767px){
+              @media screen and (max-width: 767px) {
                 bottom: 18px;
               }
             }
@@ -182,33 +175,45 @@
         }
       }
       .sources-data-row-container {
-        height: calc(18% - 4px);
-        height: -webkit-calc(18% - 4px);
-        height: -moz-calc(18% - 4px);
+        height: 17%;
         padding-bottom: 2%;
-        .attacks-dashboard-sources-text {
-          font-size: 12px;
-          @media screen and(max-width: 767px) {
-            font-size: 8px;
-          }
-        }
-        .sources-data-row-header {
-          height: 50%;
-          width: 100%;
-        }
-        .sources-data-row-bar-value-container {
+        .sources-row-data-header-value-container {
           height: 50%;
           width: 100%;
           position: relative;
-          .sources-data-row-bar-container {
-            width: 100%;
+          .sources-data-row-header {
             position: absolute;
-            left: -10px;
+            left: 0;
+            top: 0;
           }
-          .sources-data-row-value-container {
+          .sources-data-row-value {
             position: absolute;
             right: 0;
-            top: 50%;
+            top: 0;
+          }
+          .attacks-dashboard-sources-text {
+            font-size: 12px;
+            @media screen and(max-width: 767px) {
+              font-size: 7px;
+            }
+          }
+        }
+        .sources-data-row-bar-container {
+          height: 100%;
+          width: 90%;
+          @media screen and(max-width: 767px) {
+            width: 100%;
+          }
+          position: relative;
+          .sources-data-row-bar {
+            height: 100%;
+            position: absolute;
+            left: -5px;
+            top: 20%;
+            .ct-series {
+              stroke-linecap: round;
+              position: relative;
+            }
           }
         }
       }
@@ -217,7 +222,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  img, circle {
+  .types-data-element-image-container, circle {
     display: none;
   }
 }
