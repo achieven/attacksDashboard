@@ -128,16 +128,22 @@
             height: 100%;
             position: relative;
             .types-data-element-data-number {
-              //height: 33%;
               position: absolute;
               top: 0;
               left: 0;
             }
             .types-data-element-data-words {
-              //height: 67%;
               position: absolute;
               bottom: 10px;
               left: 0;
+            }
+            .types-data-element-data-word {
+              position: absolute;
+              bottom: 24px;
+              left: 0;
+              @media screen and (max-width: 767px){
+                bottom: 18px;
+              }
             }
           }
         }

@@ -46,7 +46,7 @@ export class TypesDataComponent {
                     imagePath: 'images/exploitableData.png'
                 },
                 {
-                    header: 'vip',
+                    header: 'VIP',
                     number: _data.vip,
                     imagePath: 'images/vip.png'
                 }

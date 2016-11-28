@@ -9,10 +9,18 @@
     </div>
     <div class="types-data-element-data-container">
         <div class="types-data-element-data-number attacks-dashboard-text">{{number}}</div>
-        <div class="types-data-element-data-words">
-            <div class="attacks-dashboard-text">{{firstWord}}</div>
-            <div class="attacks-dashboard-text">{{secondWord || ''}}</div>
+        <div *ngIf="secondWord === ''">
+            <div class="types-data-element-data-word">
+                <div class="attacks-dashboard-text">{{firstWord}}</div>
+            </div>
         </div>
+        <div *ngIf="secondWord != ''">
+            <div class="types-data-element-data-words">
+                <div class="attacks-dashboard-text">{{firstWord}}</div>
+                <div class="attacks-dashboard-text">{{secondWord}}</div>
+            </div>
+        </div>
+
     </div>
 </div>
 
