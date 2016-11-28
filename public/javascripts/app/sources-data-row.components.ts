@@ -1,4 +1,5 @@
 import {Input, Component} from 'angular2/core';
+import {Util} from '../util/util.js';
 
 @Component({
     selector: 'sources-data-row',
@@ -19,30 +20,25 @@ export class SourcesDataRowComponent {
     }
 
     ngAfterViewInit() {
-        var userAgent = navigator.userAgent
-        var isFirefoxBrowser = userAgent.indexOf('Firefox') > -1;
-        if (false) {
-            //$('sources-data').html('<div class="attacks-dashboard-text"> Sorry!<br><br> This feature is currenlt not supported in Firefox.<br><br> Please use Chrome / Safari instead</div> <div class="attacks-dashboard-text" style="font-size: 50px">&#9786</div>')
-        }
-        else {
-            var isIeBrowser = (userAgent.indexOf('Trident') > -1 && userAgent.indexOf('rv:11.0') > -1) || userAgent.indexOf('MSIE') > -1
-            if (true) {
-                var chartSelector = '#' + this.chartId
-                new Chartist.Bar(chartSelector, {
-                    series: [[this.value], [100 - this.value]]
-                }, {
-                    stackBars: true,
-                    horizontalBars: true,
-                    showLabel: false,
-                    axisY: {
-                        offset: 0
-                    },
-                    chartPadding: {
-                        bottom: 15,
-                    }
-                    
-                }).on('draw', function (data) {
-                    if (data.type === 'bar') {
+        
+        var isIeBrowser = Util.isIeBrowser()
+        if (!isIeBrowser) {
+            var chartSelector = '#' + this.chartId
+            new Chartist.Bar(chartSelector, {
+                series: [[this.value], [100 - this.value]]
+            }, {
+                stackBars: true,
+                horizontalBars: true,
+                showLabel: false,
+                axisY: {
+                    offset: 0
+                },
+                chartPadding: {
+                    bottom: 15,
+                }
+            }).on('draw', function (data) {
+                if (data.type === 'bar') {
+                    var styleBarChart = function(){
                         var newStyle = 'stroke: '
                         var isSeriesA = data.element._node.parentElement.className.baseVal.indexOf('ct-series-a') > 0;
                         var isSeriesB = data.element._node.parentElement.className.baseVal.indexOf('ct-series-b') > 0;
@@ -57,15 +53,17 @@ export class SourcesDataRowComponent {
                             style: newStyle
                         })
                     }
-                    if (data.type === 'label') {
+                    styleBarChart()
+                }
+                if (data.type === 'label') {
+                    var removeLabels = function(){
                         data.element.attr({
                             style: 'display: none;'
                         })
-
                     }
-                })
-
-            }
+                    removeLabels()
+                }
+            })
         }
     }
 }
