@@ -40,18 +40,18 @@
 
   .types-data {
     height: 100%;
-    width: calc(((100% - #{$web-header-width} - #{$sources-data-width} - (#{$data-presentation-padding} * 8)) / 2);
-    width: -webkit-calc(((100% - #{$web-header-width} - #{$sources-data-width} - (#{$data-presentation-padding} * 8)) / 2);
-    width: -moz-calc(((100% - #{$web-header-width} - #{$sources-data-width} - (#{$data-presentation-padding} * 8)) / 2);
-    width: -o-calc(((100% - #{$web-header-width} - #{$sources-data-width} - (#{$data-presentation-padding} * 8)) / 2);
+    width: calc(((100% - #{$web-header-width} - #{$sources-data-width} - (#{$data-presentation-padding} * 8)) / 2 - 1px);
+    width: -webkit-calc(((100% - #{$web-header-width} - #{$sources-data-width} - (#{$data-presentation-padding} * 8)) / 2 - 1px);
+    width: -moz-calc(((100% - #{$web-header-width} - #{$sources-data-width} - (#{$data-presentation-padding} * 8)) / 2 - 1px);
+    width: -o-calc(((100% - #{$web-header-width} - #{$sources-data-width} - (#{$data-presentation-padding} * 8)) / 2 - 1px);
     float: left;
   }
   .severities-data {
     height: 100%;
-    width: calc(((100% - #{$web-header-width} - #{$sources-data-width} - (#{$data-presentation-padding} * 8)) / 2);
-    width: -webkit-calc(((100% - #{$web-header-width} - #{$sources-data-width} - (#{$data-presentation-padding} * 8)) / 2);
-    width: -moz-calc(((100% - #{$web-header-width} - #{$sources-data-width} - (#{$data-presentation-padding} * 8)) / 2);
-    width: -o-calc(((100% - #{$web-header-width} - #{$sources-data-width} - (#{$data-presentation-padding} * 8)) / 2);
+    width: calc(((100% - #{$web-header-width} - #{$sources-data-width} - (#{$data-presentation-padding} * 8)) / 2 - 1px);
+    width: -webkit-calc(((100% - #{$web-header-width} - #{$sources-data-width} - (#{$data-presentation-padding} * 8)) / 2 - 1px);
+    width: -moz-calc(((100% - #{$web-header-width} - #{$sources-data-width} - (#{$data-presentation-padding} * 8)) / 2 - 1px);
+    width: -o-calc(((100% - #{$web-header-width} - #{$sources-data-width} - (#{$data-presentation-padding} * 8)) / 2 - 1px);
     float: left;
   }
   .sources-data {
@@ -85,8 +85,8 @@
       position: absolute;
       left: 0;
       top: calc(33% - #{$types-data-element-data-words-position});
-      top: -webkit-calc(33% -#{$types-data-element-data-words-position});
-      top: -moz-calc(33% - #{$types-data-element-data-words-position});
+      top: -webkit-calc(33% - #{$types-data-element-data-words-position});
+      top: -moz-calc(33% -  #{$types-data-element-data-words-position});
       top: -o-calc(33% - #{$types-data-element-data-words-position});
       width: 100%;
       border-color: #1F3A4F;
@@ -96,7 +96,7 @@
       position: absolute;
       left: 0;
       top: calc(66% - #{$types-data-element-data-words-position});
-      top: -webkit-calc(66% -#{$types-data-element-data-words-position});
+      top: -webkit-calc(66% - #{$types-data-element-data-words-position});
       top: -moz-calc(66% - #{$types-data-element-data-words-position});
       top: -o-calc(66% - #{$types-data-element-data-words-position});
       width: 100%;
