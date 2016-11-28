@@ -1,6 +1,6 @@
 import {Component} from 'angular2/core';
 import  {DataRowComponent} from './data-row.components.js'
-import {Parse} from 'util/parse.js'
+import {Parse} from '../util/parse.js'
 
 @Component({
     selector: 'main-data',
