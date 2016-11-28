@@ -25,8 +25,9 @@ export class SeveritiesDataChartComponent {
             donutWidth: '15%',
             showLabel: false
         }).on('draw', function(data) {
-            var isFirefoxBrowser = /Firefox/i.test(navigator.userAgent);
-            if(!isFirefoxBrowser) {
+            var userAgent = navigator.userAgent
+            var isIEOrFireFox = userAgent.indexOf('Firefox') > -1 || (userAgent.indexOf('Trident') > -1 && userAgent.indexOf('rv:11.0')> -1)  || userAgent.indexOf('MSIE') > -1
+            if(!isIEOrFireFox) {
                 if (data.type === 'slice') {
                     var pathLength = data.element._node.getTotalLength();
                     data.element.attr({
