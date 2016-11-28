@@ -15,6 +15,7 @@ export class DataBoxComponent {
 
     @Input() set _data(_data:any) {
         if (_data) {
+            //
             this.header = _data.header
             this.data = _data;
         }
