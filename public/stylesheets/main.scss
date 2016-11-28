@@ -1,9 +1,11 @@
+@import 'variables';
+
 body {
     margin: 0;
     height: 100%;
 
     #main-header {
-        background-color: #213C52;
+        background-color: $header-background-color;
         width: 100%;
         height: 40px;
         #intsights-header {

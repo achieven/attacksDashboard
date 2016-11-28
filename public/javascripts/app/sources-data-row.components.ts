@@ -22,7 +22,7 @@ export class SourcesDataRowComponent {
         var userAgent = navigator.userAgent
         var isFirefoxBrowser = userAgent.indexOf('Firefox') > -1;
         if (isFirefoxBrowser) {
-            $('.sources-data').attr('style', 'display:none')
+            $('sources-data').html('<div class="attacks-dashboard-text"> Sorry!<br><br> This feature is currenlt not supported in Firefox.<br><br> Please use Chrome / Safari instead</div> <div class="attacks-dashboard-text" style="font-size: 50px">&#9786</div>')
         }
         else {
             var isIeBrowser = (userAgent.indexOf('Trident') > -1 && userAgent.indexOf('rv:11.0') > -1) || userAgent.indexOf('MSIE') > -1

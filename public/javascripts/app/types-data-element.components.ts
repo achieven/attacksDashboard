@@ -23,7 +23,6 @@ export class TypesDataElementComponent {
                     this.secondWord = ''
                 }
             }
-            this.header = _data.header;
             this.number = _data.number;
             this.imagePath = _data.imagePath;
         }

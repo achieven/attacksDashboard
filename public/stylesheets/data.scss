@@ -1,3 +1,5 @@
+@import 'variables';
+
 .data-row {
   width: 100%;
   height: 40%;
@@ -8,14 +10,13 @@
     padding-right: 0.5%;
     padding-left: 0.5%;
   }
-
   .web-header {
     width: 10%;
     float: left;
     .web-header-element-container {
       width: 100%;
       .web-header-label-container {
-        height: 15%;
+        height: $data-row-header-size;
         position: relative;
         .web-header-label {
           font-size: 18px;
@@ -29,7 +30,10 @@
       }
       .web-header-image {
         width: 100%;
-        height: 85%;
+        height: calc(100% - #{$data-row-header-size});
+        height: -webkit-calc(100% - #{$data-row-header-size});
+        height: -moz-calc(100% - #{$data-row-header-size});
+        height: -o-calc(100% - #{$data-row-header-size});
       }
     }
   }
@@ -51,8 +55,8 @@
   }
   .data-header-container {
     width: 100%;
-    height: 15%;
-    background-color: #213C52;
+    height: $data-row-header-size;
+    background-color: $header-background-color;
     position: relative;
     .data-header {
       padding-left: 5%;
@@ -64,15 +68,20 @@
   }
   .data-content-container {
     background-color: #224A6B;
-    height: 85%;
+    height: calc(100% - #{$data-row-header-size});
+    height: -webkit-calc(100% - #{$data-row-header-size});
+    height: -moz-calc(100% - #{$data-row-header-size});
+    height: -o-calc(100% - #{$data-row-header-size});
     width: 100%;
     position: relative;
+    $types-data-element-data-words-position: 10px;
     .hr1 {
       position: absolute;
       left: 0;
-      top: calc(33% - 10px);
-      top: -moz-calc(33% - 10px);
-      top: -webkit-calc(33% - 10px);
+      top: calc(33% - #{$types-data-element-data-words-position});
+      top: -webkit-calc(33% -#{$types-data-element-data-words-position});
+      top: -moz-calc(33% - #{$types-data-element-data-words-position});
+      top: -o-calc(33% - #{$types-data-element-data-words-position});
       width: 100%;
       border-color: #1F3A4F;
       display: inline;
@@ -80,9 +89,10 @@
     .hr2 {
       position: absolute;
       left: 0;
-      top: calc(66% - 10px);
-      top: -moz-calc(66% - 10px);
-      top: -webkit-calc(66% - 10px);
+      top: calc(66% - #{$types-data-element-data-words-position});
+      top: -webkit-calc(66% -#{$types-data-element-data-words-position});
+      top: -moz-calc(66% - #{$types-data-element-data-words-position});
+      top: -o-calc(66% - #{$types-data-element-data-words-position});
       width: 100%;
       border-color: #1F3A4F;
       display: inline;
@@ -134,7 +144,7 @@
             }
             .types-data-element-data-words {
               position: absolute;
-              bottom: 10px;
+              bottom: $types-data-element-data-words-position;
               left: 0;
             }
             .types-data-element-data-word {
@@ -168,6 +178,7 @@
       .sources-data-row-container {
         height: calc(18% - 4px);
         height: -webkit-calc(18% - 4px);
+        height: -moz-calc(18% - 4px);
         padding-bottom: 2%;
         .attacks-dashboard-sources-text {
           font-size: 12px;
