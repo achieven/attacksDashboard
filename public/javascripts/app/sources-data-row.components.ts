@@ -40,17 +40,18 @@ export class SourcesDataRowComponent {
                     chartPadding: {
                         bottom: 15,
                     }
+                    
                 }).on('draw', function (data) {
                     if (data.type === 'bar') {
-                        var newStyle = 'stroke-width: 12px;'
+                        var newStyle = 'stroke: '
                         var isSeriesA = data.element._node.parentElement.className.baseVal.indexOf('ct-series-a') > 0;
                         var isSeriesB = data.element._node.parentElement.className.baseVal.indexOf('ct-series-b') > 0;
-                        var blueStroke = '#8AB4D4', blackStroke = '#1D384B'
+                        const blueStroke = '#8AB4D4', blackStroke = '#1D384B'
                         if (isSeriesA) {
-                            newStyle += 'stroke: ' + blueStroke
+                            newStyle += blueStroke
                         }
                         else if (isSeriesB) {
-                            newStyle += 'stroke: ' + blackStroke
+                            newStyle += blackStroke
                         }
                         data.element.attr({
                             style: newStyle
@@ -63,6 +64,7 @@ export class SourcesDataRowComponent {
 
                     }
                 })
+
             }
         }
     }

@@ -13,28 +13,22 @@
   .web-header {
     width: $web-header-width;
     float: left;
-    .web-header-element-container {
-      width: 100%;
-      .web-header-label-container {
-        height: $data-row-header-height;
-        position: relative;
-        .web-header-label {
-          font-size: 18px;
-          width: 100%;
-          text-align: center;
-
-          @media screen and (max-width: 767px) {
-            font-size: 12px;
-          }
+    .web-header-label-container {
+      height: $data-row-header-height;
+      position: relative;
+      .web-header-label {
+        font-size: 18px;
+        width: 100%;
+        text-align: center;
+        @media screen and (max-width: 767px) {
+          font-size: 12px;
         }
       }
-      .web-header-image {
-        width: 100%;
-        height: calc(100% - #{$data-row-header-height});
-        height: -webkit-calc(100% - #{$data-row-header-height});
-        height: -moz-calc(100% - #{$data-row-header-height});
-        height: -o-calc(100% - #{$data-row-header-height});
-      }
+    }
+    .web-header-image {
+      width: 100%;
+      max-height: 100%;
+      height: auto;
     }
   }
 
@@ -61,7 +55,7 @@
   }
   .data-header-container {
     width: 100%;
-    height: $data-row-header-height ;
+    height: $data-row-header-height;
     background-color: $header-background-color;
     position: relative;
     .data-header {
@@ -86,7 +80,7 @@
       left: 0;
       top: calc(33% - #{$types-data-element-data-words-position});
       top: -webkit-calc(33% - #{$types-data-element-data-words-position});
-      top: -moz-calc(33% -  #{$types-data-element-data-words-position});
+      top: -moz-calc(33% - #{$types-data-element-data-words-position});
       top: -o-calc(33% - #{$types-data-element-data-words-position});
       width: 100%;
       border-color: #1F3A4F;
@@ -114,6 +108,7 @@
           float: left;
           .types-data-element-image-container {
             width: 20%;
+
             float: left;
             margin-right: 5%;
             .image-circle-non-svg-container {
@@ -157,7 +152,7 @@
               position: absolute;
               bottom: 24px;
               left: 0;
-              @media screen and (max-width: 767px){
+              @media screen and (max-width: 767px) {
                 bottom: 18px;
               }
             }
@@ -186,29 +181,43 @@
         height: -webkit-calc(18% - 4px);
         height: -moz-calc(18% - 4px);
         padding-bottom: 2%;
-        .attacks-dashboard-sources-text {
-          font-size: 12px;
-          @media screen and(max-width: 767px) {
-            font-size: 8px;
-          }
-        }
-        .sources-data-row-header {
-          height: 50%;
-          width: 100%;
-        }
-        .sources-data-row-bar-value-container {
+        .sources-row-data-header-value-container {
           height: 50%;
           width: 100%;
           position: relative;
-          .sources-data-row-bar-container {
-            width: 100%;
+          .sources-data-row-header {
             position: absolute;
-            left: -10px;
+            left: 0;
+            top: 0;
           }
-          .sources-data-row-value-container {
+          .sources-data-row-value {
             position: absolute;
             right: 0;
-            top: 50%;
+            top: 0;
+          }
+          .attacks-dashboard-sources-text {
+            font-size: 12px;
+            @media screen and(max-width: 767px) {
+              font-size: 7px;
+            }
+          }
+        }
+        .sources-data-row-bar-container {
+          height: 100%;
+          width: 90%;
+          @media screen and(max-width: 767px) {
+            width: 100%;
+          }
+          position: relative;
+          .sources-data-row-bar {
+            height: 100%;
+            position: absolute;
+            left: -5px;
+            top: 20%;
+            .ct-series {
+              stroke-linecap: round;
+              position: relative;
+            }
           }
         }
       }
@@ -217,8 +226,8 @@
 }
 
 @media screen and (max-width: 768px) {
-  img, circle {
-    display: none;
+  circle {
+    //display: none;
   }
 }
 
