@@ -34,7 +34,10 @@ export class SeveritiesDataChartComponent {
             }
             
         }).on('draw', function(data) {
-            if(!isIeBrowser) {
+            if(isIeBrowser){
+                $('#error-to-show').html('Using Internet Explorer and having problems with charts?<br> Sorry! :) &nbsp &nbsp Please use Chrome / Firefox / Safari.')
+            }
+            else {
                 if (data.type === 'slice') {
                     var animateDonutPie = function(){
                         var pathLength = data.element._node.getTotalLength();
@@ -63,6 +66,5 @@ export class SeveritiesDataChartComponent {
                 }
             }
         })
-
     }
 }
