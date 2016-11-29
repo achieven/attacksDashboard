@@ -168,13 +168,16 @@
         }
       }
       .severities-chart-container {
-        height: 70%;
+        height: $severities-chart-height;
         .ct-chart-donut text{
           fill: $attacks-dashboard-text-color;
         }
       }
       .severities-data-row-container {
-        height: 30%;
+        height: calc(100% - #{$severities-chart-height});
+        height: -webkit-calc(100% - #{$severities-chart-height});
+        height: -moz-calc(100% - #{$severities-chart-height});
+        height: -o-calc(100% - #{$severities-chart-height});
         margin-left: 5%;
         margin-right: 5%;
         position: relative;
@@ -188,21 +191,24 @@
         }
       }
       .sources-data-row-container {
-        height: 17%;
-        padding-bottom: 2%;
+        padding-bottom: $padding-between-sources-rows;
+        height: calc(100% / #{$number-of-sources-rows} - #{$padding-between-sources-rows} - 1px);
+        height: -webkit-calc(100% / #{$number-of-sources-rows} - #{$padding-between-sources-rows} - 1px);
+        height: -moz-calc(100% / #{$number-of-sources-rows} - #{$padding-between-sources-rows} - 1px);
+        height: -o-calc(100% / #{$number-of-sources-rows} - #{$padding-between-sources-rows} - 1px);
         .sources-row-data-header-value-container {
           height: 50%;
           width: 100%;
           position: relative;
           .sources-data-row-header {
             position: absolute;
-            width: 90%;
+            width: $sources-data-row-left-element-width;
             left: 0;
             top: 0;
           }
           .sources-data-row-value {
             position: absolute;
-            right: 0;
+            right: $sources-data-row-mobile-seperate-text-and-value;
             top: 0;
           }
           .attacks-dashboard-sources-text {
@@ -214,7 +220,7 @@
         }
         .sources-data-row-bar-container {
           height: 100%;
-          width: 90%;
+          width: $sources-data-row-left-element-width;
           @media screen and(max-width: 767px) {
             width: 100%;
           }
@@ -222,11 +228,10 @@
           .sources-data-row-bar {
             height: 100%;
             position: absolute;
-            left: -5px;
-            top: 20%;
+            left: $sources-data-row-bar-exactly-under-text;
+            top: $sources-data-row-bar-seperate-from-text;
             .ct-series {
-              stroke-linecap: round;
-              position: relative;
+              stroke-linecap: $round-the-bar-chart;
             }
           }
         }

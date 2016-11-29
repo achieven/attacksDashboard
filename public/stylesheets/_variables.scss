@@ -12,21 +12,28 @@ $data-row-header-height: 15%;
 $data-content-container-color: #224A6B;
 $hr-border-color: #1F3A4F;
 $data-content-padding-inside-box: 10px;
+
 $types-data-row-height: 30%;
 $types-data-element-image-container-width: 20%;
 $margin-between-types-data-image-and-text: 5%;
 $image-circle-height: 70%;
 $types-data-image-size: 40%;
+$types-data-element-data-words-position: 10px;
+
+$severities-chart-height: 70%;
+
+$sources-data-width: 20%;
+$padding-between-sources-rows: 2%;
+$number-of-sources-rows: 5;
+$sources-data-row-left-element-width: 90%;
+$sources-data-row-mobile-seperate-text-and-value: -5px;
+$sources-data-row-bar-exactly-under-text: -5px;
+$sources-data-row-bar-seperate-from-text: 20%;
+$round-the-bar-chart: round;
+
 
 $div-text-automatic-padding: 3px;
 $div-text-mobile-automatic-padding: 1px;
-
-
-$sources-data-width: 20%;
-$types-data-element-data-words-position: 10px;
 $attacks-dashboard-text-color: white;
-
-
-
 $attacks-dashboard-text-size: 14px;
 $attacks-dashboard-mobile-text--size: 7px;
