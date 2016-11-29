@@ -4,7 +4,8 @@ attacksDashboard
 
 *.components.js
 *.components.js.map
-*parse.js
+public/javascripts/util/*.js
+public/javascripts/app/*.js
 *.css
 
 .idea
