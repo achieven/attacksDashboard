@@ -38,11 +38,11 @@ body {
         }
     }
     .attacks-dashboard-text {
-        color: white;
-        font-size: 14px;
+        color: $attacks-dashboard-text-color;
+        font-size: $attacks-dashboard-text-size;
         //font-family: "Times New Roman", Times, serif;
         @media screen and(max-width: 767px) {
-            font-size: 7px;
+            font-size: $attacks-dashboard-mobile-text--size;
         }
     }
 }

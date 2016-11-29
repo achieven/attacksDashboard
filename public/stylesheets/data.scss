@@ -67,7 +67,7 @@
     }
   }
   .data-content-container {
-    background-color: #224A6B;
+    background-color: $data-content-container-color;
     height: calc(100% - #{$data-row-header-height});
     height: -webkit-calc(100% - #{$data-row-header-height});
     height: -moz-calc(100% - #{$data-row-header-height});
@@ -82,8 +82,7 @@
       top: -moz-calc(33% - #{$types-data-element-data-words-position});
       top: -o-calc(33% - #{$types-data-element-data-words-position});
       width: 100%;
-      border-color: #1F3A4F;
-      display: inline;
+      border-color: $hr-border-color;
     }
     .hr2 {
       position: absolute;
@@ -93,25 +92,27 @@
       top: -moz-calc(66% - #{$types-data-element-data-words-position});
       top: -o-calc(66% - #{$types-data-element-data-words-position});
       width: 100%;
-      border-color: #1F3A4F;
-      display: inline;
+      border-color: $hr-border-color;
     }
     .data-content-padding {
-      padding: 10px;
+      padding: $data-content-padding-inside-box;
       .types-data-row {
         width: 100%;
-        height: 30%;
-        padding-bottom: 3%;
+        height: $types-data-row-height;
+        padding-bottom: calc(33% - #{$types-data-row-height});
+        padding-bottom: -webkit-calc(33% - #{$types-data-row-height});
+        padding-bottom: -moz-calc(33% - #{$types-data-row-height});
+        padding-bottom: -o-calc(33% - #{$types-data-row-height});
         .types-data-element {
           width: 50%;
           float: left;
           .types-data-element-image-container {
-            width: 20%;
+            width: $types-data-element-image-container-width;
             float: left;
-            margin-right: 5%;
+            margin-right: $margin-between-types-data-image-and-text;
             .image-circle-non-svg-container {
               position: relative;
-              height: 70%;
+              height: $image-circle-height;
               width: 100%;
               .image-circle-container {
                 height: 100%;
@@ -121,18 +122,21 @@
                 top: 0;
                 .image-circle {
                   stroke: white;
-                  fill: #224A6B;
+                  fill: $data-content-container-color ;
                   stroke-width: 2;
                 }
               }
               .types-data-image {
-                width: 33%;
-                height: 33%;
+                width: $types-data-image-size;
+                height: $types-data-image-size;
               }
             }
           }
           .types-data-element-data-container {
-            width: 75%;
+            width: calc(100% - #{$margin-between-types-data-image-and-text} - #{$types-data-element-image-container-width});
+            width: -webkit-calc(100% - #{$margin-between-types-data-image-and-text} - #{$types-data-element-image-container-width});
+            width: -moz-calc(100% - #{$margin-between-types-data-image-and-text} - #{$types-data-element-image-container-width});
+            width: -o-calc(100% - #{$margin-between-types-data-image-and-text} - #{$types-data-element-image-container-width});
             float: left;
             height: 100%;
             position: relative;
@@ -148,20 +152,32 @@
             }
             .types-data-element-data-word {
               position: absolute;
-              bottom: 24px;
+              bottom: calc(#{$attacks-dashboard-text-size} +  #{$div-text-automatic-padding}  + #{$types-data-element-data-words-position});
+              bottom: -webkit-calc(#{$attacks-dashboard-text-size} +  #{$div-text-automatic-padding}  + #{$types-data-element-data-words-position});
+              bottom: -moz-calc(#{$attacks-dashboard-text-size} +  #{$div-text-automatic-padding}  + #{$types-data-element-data-words-position});
+              bottom: -o-calc(#{$attacks-dashboard-text-size} +  #{$div-text-automatic-padding}  + #{$types-data-element-data-words-position});
               left: 0;
               @media screen and (max-width: 767px) {
-                bottom: 18px;
+                bottom: calc(#{$attacks-dashboard-mobile-text--size} +  #{$div-text-mobile-automatic-padding}  + #{$types-data-element-data-words-position});
+                bottom: -webkit-calc(#{$attacks-dashboard-mobile-text--size} +  #{$div-text-mobile-automatic-padding}  + #{$types-data-element-data-words-position});
+                bottom: -moz-calc(#{$attacks-dashboard-mobile-text--size} +  #{$div-text-mobile-automatic-padding}  + #{$types-data-element-data-words-position});
+                bottom: -o-calc(#{$attacks-dashboard-mobile-text--size} +  #{$div-text-mobile-automatic-padding}  + #{$types-data-element-data-words-position});
               }
             }
           }
         }
       }
       .severities-chart-container {
-        height: 70%;
+        height: $severities-chart-height;
+        .ct-chart-donut text{
+          fill: $attacks-dashboard-text-color;
+        }
       }
       .severities-data-row-container {
-        height: 30%;
+        height: calc(100% - #{$severities-chart-height});
+        height: -webkit-calc(100% - #{$severities-chart-height});
+        height: -moz-calc(100% - #{$severities-chart-height});
+        height: -o-calc(100% - #{$severities-chart-height});
         margin-left: 5%;
         margin-right: 5%;
         position: relative;
@@ -175,20 +191,21 @@
         }
       }
       .sources-data-row-container {
-        height: 17%;
-        padding-bottom: 2%;
+        padding-bottom: $padding-between-sources-rows;
+        height: (17%);
         .sources-row-data-header-value-container {
           height: 50%;
           width: 100%;
           position: relative;
           .sources-data-row-header {
             position: absolute;
+            width: $sources-data-row-left-element-width;
             left: 0;
             top: 0;
           }
           .sources-data-row-value {
             position: absolute;
-            right: 0;
+            right: $sources-data-row-mobile-seperate-text-and-value;
             top: 0;
           }
           .attacks-dashboard-sources-text {
@@ -200,7 +217,7 @@
         }
         .sources-data-row-bar-container {
           height: 100%;
-          width: 90%;
+          width: $sources-data-row-left-element-width;
           @media screen and(max-width: 767px) {
             width: 100%;
           }
@@ -208,11 +225,10 @@
           .sources-data-row-bar {
             height: 100%;
             position: absolute;
-            left: -5px;
-            top: 20%;
+            left: $sources-data-row-bar-exactly-under-text;
+            top: $sources-data-row-bar-seperate-from-text;
             .ct-series {
-              stroke-linecap: round;
-              position: relative;
+              stroke-linecap: $round-the-bar-chart;
             }
           }
         }
