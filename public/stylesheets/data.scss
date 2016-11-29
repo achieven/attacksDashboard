@@ -192,10 +192,7 @@
       }
       .sources-data-row-container {
         padding-bottom: $padding-between-sources-rows;
-        height: calc(100% / #{$number-of-sources-rows} - #{$padding-between-sources-rows} - 1px);
-        height: -webkit-calc(100% / #{$number-of-sources-rows} - #{$padding-between-sources-rows} - 1px);
-        height: -moz-calc(100% / #{$number-of-sources-rows} - #{$padding-between-sources-rows} - 1px);
-        height: -o-calc(100% / #{$number-of-sources-rows} - #{$padding-between-sources-rows} - 1px);
+        height: (17%);
         .sources-row-data-header-value-container {
           height: 50%;
           width: 100%;
