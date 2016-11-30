@@ -1,5 +1,4 @@
 import {Input, Component} from 'angular2/core';
-import {Util} from '../util/util.js';
 
 @Component({
     selector: 'sources-data-row',
@@ -37,6 +36,7 @@ export class SourcesDataRowComponent {
         }).on('draw', function (data) {
             if (data.type === 'bar') {
                 var styleBarChart = function () {
+                    console.log('styling!!')
                     var newStyle = 'stroke: '
                     var isSeriesA = data.element._node.parentElement.className.baseVal.indexOf('ct-series-a') > 0;
                     var isSeriesB = data.element._node.parentElement.className.baseVal.indexOf('ct-series-b') > 0;

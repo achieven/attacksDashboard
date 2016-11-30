@@ -1,7 +1,7 @@
 import {Injectable} from "angular2/core";
 @Injectable()
 export class Util {
-    static isIeBrowser(callback) {
+    static isIeBrowser() {
         var userAgent = navigator.userAgent
         if ((userAgent.indexOf('Trident') > -1 && userAgent.indexOf('rv:11.0') > -1) || userAgent.indexOf('MSIE') > -1) {
             return true
