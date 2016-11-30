@@ -14,7 +14,7 @@
     "bin",
     "node_modules",
     "public/stylesheets",
-    "public/images",
+    "public/assets/images",
     "public/assets",
     "server/routes",
     "server",

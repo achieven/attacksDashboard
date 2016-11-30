@@ -7,7 +7,7 @@ attacksDashboard
 public/javascripts/util/*.js*
 public/javascripts/app/*.js*
 test/*.js*
-*.css
+public/stylesheets/*.css
 
 .idea
 npm-debug.log
