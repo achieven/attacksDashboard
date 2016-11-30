@@ -36,10 +36,9 @@ export class SourcesDataRowComponent {
         }).on('draw', function (data) {
             if (data.type === 'bar') {
                 var styleBarChart = function () {
-                    console.log('styling!!')
                     var newStyle = 'stroke: '
-                    var isSeriesA = data.element._node.parentElement.className.baseVal.indexOf('ct-series-a') > 0;
-                    var isSeriesB = data.element._node.parentElement.className.baseVal.indexOf('ct-series-b') > 0;
+                    var isSeriesA = data.element._node.parentNode.className.baseVal.indexOf('ct-series-a') > 0;
+                    var isSeriesB = data.element._node.parentNode.className.baseVal.indexOf('ct-series-b') > 0;
                     const blueStroke = '#8AB4D4', blackStroke = '#1D384B'
                     if (isSeriesA) {
                         newStyle += blueStroke
