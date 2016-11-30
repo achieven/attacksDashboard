@@ -3,20 +3,21 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "postinstall": "npm run typings install; npm run reloadDependencies;",
+    "postinstall": "npm run typings install; npm run reloadDependencies; npm run gulpCompile;",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
-    "start": "concurrently \"node ./bin/www\" \"npm run gulp \"",
+    "startDev": "concurrently \"node ./bin/www\" \"npm run gulp \"",
+    "startProd": "node ./bin/www",
+    "start": "npm run startProd",
     "typings": "typings",
     "gulp": "gulp",
+    "gulpCompile": "gulp compile; gulp build-css;",
     "reloadDependencies": "npm i reflect-metadata@0.1.2 rxjs@5.0.0-beta.6",
-    "test": "tsc -p tsconfig.test.json; mocha",
-    "build": "tsc"
+    "test": "tsc -p tsconfig.test.json; ./node_modules/mocha/bin/mocha"
   },
   "dependencies": {
     "angular2": "^2.0.0-beta.17",
     "chartist": "^0.10.1",
-    "commonjs": "0.0.1",
     "debug": "~2.2.0",
     "es6-promise": "^4.0.5",
     "es6-shim": "^0.35.1",
@@ -29,7 +30,6 @@
   },
   "devDependencies": {
     "@angular/core": "^2.2.3",
-    "@types/core-js": "^0.9.34",
     "chai": "^3.5.0",
     "concurrently": "^3.1.0",
     "gulp": "^3.9.1",
