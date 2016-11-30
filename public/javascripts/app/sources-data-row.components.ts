@@ -13,7 +13,7 @@ export class SourcesDataRowComponent {
 
 
     @Input() set _data(_data:any) {
-        var headerSeperatedBycapitalLetters = _data.header.match(/[A-Z][a-z]+/g).join(' ');
+        var headerSeperatedBycapitalLetters = _data.header;
         this.header = headerSeperatedBycapitalLetters
         this.value = _data.value;
         this.chartId = 'bar' + _data.outerRowNumber + '_' + _data.rowNumber;

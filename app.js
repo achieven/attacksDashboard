@@ -8,6 +8,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/templates', express.static(__dirname + '/views/templates/'))
 app.use('/scripts', express.static(__dirname + '/node_modules/'));
 app.use('/css', express.static(__dirname + '/public/stylesheets/'))
+
 app.use('/images', express.static(__dirname + '/public/assets/images/'))
 app.use('/fonts', express.static(__dirname + '/public/assets/fonts/'))
 app.use(cookieParser())

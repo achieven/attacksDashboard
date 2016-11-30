@@ -13,22 +13,33 @@
   .web-header {
     width: $web-header-width;
     float: left;
-    .web-header-label-container {
-      height: $data-row-header-height;
+    height: 100%;
+    .web-header-element-container {
       position: relative;
-      .web-header-label {
-        font-size: 18px;
+      width: 100%;
+      height: 100%;
+      .web-header-label-container {
+        height: $data-row-header-height;
         width: 100%;
-        text-align: center;
-        @media screen and (max-width: 767px) {
-          font-size: 12px;
+        .web-header-label {
+          font-size: 18px;
+          width: 100%;
+          text-align: center;
+          @media screen and (max-width: 767px) {
+            font-size: 12px;
+          }
         }
       }
-    }
-    .web-header-image {
-      width: 100%;
-      max-height: 100%;
-      height: auto;
+      .web-header-image-container {
+        height: calc(100% - #{$data-row-header-height});
+        height: -webkit-calc(100% - #{$data-row-header-height});
+        height: -moz-calc(100% - #{$data-row-header-height});
+        height: -o-calc(100% - #{$data-row-header-height});
+        .web-header-image {
+          width: 100%;
+          max-height: 100%;
+        }
+      }
     }
   }
 
@@ -96,139 +107,149 @@
     }
     .data-content-padding {
       padding: $data-content-padding-inside-box;
-      .types-data-row {
-        width: 100%;
-        height: $types-data-row-height;
-        padding-bottom: calc(33% - #{$types-data-row-height});
-        padding-bottom: -webkit-calc(33% - #{$types-data-row-height});
-        padding-bottom: -moz-calc(33% - #{$types-data-row-height});
-        padding-bottom: -o-calc(33% - #{$types-data-row-height});
-        .types-data-element {
-          width: 50%;
-          float: left;
-          .types-data-element-image-container {
-            width: $types-data-element-image-container-width;
+      height: 100%;
+      .data-box-content {
+        height: 100%;
+
+        .types-data-row {
+          width: 100%;
+          height: $types-data-row-height;
+          padding-bottom: calc(33% - #{$types-data-row-height});
+          padding-bottom: -webkit-calc(33% - #{$types-data-row-height});
+          padding-bottom: -moz-calc(33% - #{$types-data-row-height});
+          padding-bottom: -o-calc(33% - #{$types-data-row-height});
+          .types-data-element {
+            width: 50%;
+            height: 100%;
             float: left;
-            margin-right: $margin-between-types-data-image-and-text;
-            .image-circle-non-svg-container {
-              position: relative;
-              height: $image-circle-height;
-              width: 100%;
-              .image-circle-container {
-                height: 100%;
+            .types-data-element-image-container {
+              width: $types-data-element-image-container-width;
+              height: 100%;
+              float: left;
+              margin-right: $margin-between-types-data-image-and-text;
+              .image-circle-non-svg-container {
+                position: relative;
+                height: $image-circle-height;
                 width: 100%;
-                position: absolute;
-                left: 0;
-                top: 0;
-                .image-circle {
-                  stroke: white;
-                  fill: $data-content-container-color ;
-                  stroke-width: 2;
+                .image-circle-container {
+                  height: 100%;
+                  width: 100%;
+                  position: absolute;
+                  left: 0;
+                  top: 0;
+                  .image-circle {
+                    stroke: white;
+                    fill: $data-content-container-color;
+                    stroke-width: 2;
+                  }
+                }
+                .types-data-image {
+                  width: $types-data-image-size;
+                  height: $types-data-image-size;
                 }
               }
-              .types-data-image {
-                width: $types-data-image-size;
-                height: $types-data-image-size;
+            }
+            .types-data-element-data-container {
+              width: calc(100% - #{$margin-between-types-data-image-and-text} - #{$types-data-element-image-container-width});
+              width: -webkit-calc(100% - #{$margin-between-types-data-image-and-text} - #{$types-data-element-image-container-width});
+              width: -moz-calc(100% - #{$margin-between-types-data-image-and-text} - #{$types-data-element-image-container-width});
+              width: -o-calc(100% - #{$margin-between-types-data-image-and-text} - #{$types-data-element-image-container-width});
+              float: left;
+              height: 100%;
+              position: relative;
+              .types-data-element-data-number {
+                position: absolute;
+                top: 0;
+                left: 0;
               }
-            }
-          }
-          .types-data-element-data-container {
-            width: calc(100% - #{$margin-between-types-data-image-and-text} - #{$types-data-element-image-container-width});
-            width: -webkit-calc(100% - #{$margin-between-types-data-image-and-text} - #{$types-data-element-image-container-width});
-            width: -moz-calc(100% - #{$margin-between-types-data-image-and-text} - #{$types-data-element-image-container-width});
-            width: -o-calc(100% - #{$margin-between-types-data-image-and-text} - #{$types-data-element-image-container-width});
-            float: left;
-            height: 100%;
-            position: relative;
-            .types-data-element-data-number {
-              position: absolute;
-              top: 0;
-              left: 0;
-            }
-            .types-data-element-data-words {
-              position: absolute;
-              bottom: $types-data-element-data-words-position;
-              left: 0;
-            }
-            .types-data-element-data-word {
-              position: absolute;
-              bottom: calc(#{$attacks-dashboard-text-size} +  #{$div-text-automatic-padding}  + #{$types-data-element-data-words-position});
-              bottom: -webkit-calc(#{$attacks-dashboard-text-size} +  #{$div-text-automatic-padding}  + #{$types-data-element-data-words-position});
-              bottom: -moz-calc(#{$attacks-dashboard-text-size} +  #{$div-text-automatic-padding}  + #{$types-data-element-data-words-position});
-              bottom: -o-calc(#{$attacks-dashboard-text-size} +  #{$div-text-automatic-padding}  + #{$types-data-element-data-words-position});
-              left: 0;
-              @media screen and (max-width: 767px) {
-                bottom: calc(#{$attacks-dashboard-mobile-text--size} +  #{$div-text-mobile-automatic-padding}  + #{$types-data-element-data-words-position});
-                bottom: -webkit-calc(#{$attacks-dashboard-mobile-text--size} +  #{$div-text-mobile-automatic-padding}  + #{$types-data-element-data-words-position});
-                bottom: -moz-calc(#{$attacks-dashboard-mobile-text--size} +  #{$div-text-mobile-automatic-padding}  + #{$types-data-element-data-words-position});
-                bottom: -o-calc(#{$attacks-dashboard-mobile-text--size} +  #{$div-text-mobile-automatic-padding}  + #{$types-data-element-data-words-position});
+              .types-data-element-data-words {
+                position: absolute;
+                bottom: $types-data-element-data-words-position;
+                left: 0;
+              }
+              .types-data-element-data-word {
+                position: absolute;
+                bottom: calc(#{$attacks-dashboard-text-size} + #{$div-text-automatic-padding} + #{$types-data-element-data-words-position});
+                bottom: -webkit-calc(#{$attacks-dashboard-text-size} + #{$div-text-automatic-padding} + #{$types-data-element-data-words-position});
+                bottom: -moz-calc(#{$attacks-dashboard-text-size} + #{$div-text-automatic-padding} + #{$types-data-element-data-words-position});
+                bottom: -o-calc(#{$attacks-dashboard-text-size} + #{$div-text-automatic-padding} + #{$types-data-element-data-words-position});
+                left: 0;
+                @media screen and (max-width: 767px) {
+                  bottom: calc(#{$attacks-dashboard-mobile-text--size} + #{$div-text-mobile-automatic-padding} + #{$types-data-element-data-words-position});
+                  bottom: -webkit-calc(#{$attacks-dashboard-mobile-text--size} + #{$div-text-mobile-automatic-padding} + #{$types-data-element-data-words-position});
+                  bottom: -moz-calc(#{$attacks-dashboard-mobile-text--size} + #{$div-text-mobile-automatic-padding} + #{$types-data-element-data-words-position});
+                  bottom: -o-calc(#{$attacks-dashboard-mobile-text--size} + #{$div-text-mobile-automatic-padding} + #{$types-data-element-data-words-position});
+                }
               }
             }
           }
         }
-      }
-      .severities-chart-container {
-        height: $severities-chart-height;
-        .ct-chart-donut text{
-          fill: $attacks-dashboard-text-color;
+        .severities-chart-container {
+          height: $severities-chart-height;
+          .ct-chart-donut text {
+            fill: $attacks-dashboard-text-color;
+          }
         }
-      }
-      .severities-data-row-container {
-        height: calc(100% - #{$severities-chart-height});
-        height: -webkit-calc(100% - #{$severities-chart-height});
-        height: -moz-calc(100% - #{$severities-chart-height});
-        height: -o-calc(100% - #{$severities-chart-height});
-        margin-left: 5%;
-        margin-right: 5%;
-        position: relative;
-        .severities-data-element-container-high {
-          position: absolute;
-          left: 0;
-        }
-        .severities-data-element-container-low {
-          position: absolute;
-          right: 0;
-        }
-      }
-      .sources-data-row-container {
-        padding-bottom: $padding-between-sources-rows;
-        height: (17%);
-        .sources-row-data-header-value-container {
-          height: 50%;
-          width: 100%;
+        .severities-data-row-container {
+          height: calc(100% - #{$severities-chart-height});
+          height: -webkit-calc(100% - #{$severities-chart-height});
+          height: -moz-calc(100% - #{$severities-chart-height});
+          height: -o-calc(100% - #{$severities-chart-height});
+          margin-left: 5%;
+          margin-right: 5%;
           position: relative;
-          .sources-data-row-header {
+          .severities-data-element-container-high {
             position: absolute;
-            width: $sources-data-row-left-element-width;
             left: 0;
-            top: 0;
           }
-          .sources-data-row-value {
+          .severities-data-element-container-low {
             position: absolute;
-            right: $sources-data-row-mobile-seperate-text-and-value;
-            top: 0;
-          }
-          .attacks-dashboard-sources-text {
-            font-size: 12px;
-            @media screen and(max-width: 767px) {
-              font-size: 7px;
-            }
+            right: 0;
           }
         }
-        .sources-data-row-bar-container {
-          height: 100%;
-          width: $sources-data-row-left-element-width;
-          @media screen and(max-width: 767px) {
-            width: 100%;
-          }
-          position: relative;
-          .sources-data-row-bar {
-            height: 100%;
-            position: absolute;
-            left: $sources-data-row-bar-exactly-under-text;
-            top: $sources-data-row-bar-seperate-from-text;
-            .ct-series {
-              stroke-linecap: $round-the-bar-chart;
+        .data-box-content-sources {
+          height: 20%;
+          .sources-data-row-container {
+            padding-bottom: $padding-between-sources-rows;
+            height: (100%);
+            .sources-row-data-header-value-container {
+              height: 50%;
+              width: 100%;
+              position: relative;
+              .sources-data-row-header {
+                position: absolute;
+                width: $sources-data-row-left-element-width;
+                left: 0;
+                top: 0;
+              }
+              .sources-data-row-value {
+                position: absolute;
+                right: $sources-data-row-mobile-seperate-text-and-value;
+                top: 0;
+              }
+              .attacks-dashboard-sources-text {
+                font-size: 12px;
+                @media screen and(max-width: 767px) {
+                  font-size: 7px;
+                }
+              }
+            }
+            .sources-data-row-bar-container {
+              height: 100%;
+              width: $sources-data-row-left-element-width;
+              @media screen and(max-width: 767px) {
+                width: 100%;
+              }
+              position: relative;
+              .sources-data-row-bar {
+                height: 100%;
+                position: absolute;
+                left: $sources-data-row-bar-exactly-under-text;
+                top: $sources-data-row-bar-seperate-from-text;
+                .ct-series {
+                  stroke-linecap: $round-the-bar-chart;
+                }
+              }
             }
           }
         }

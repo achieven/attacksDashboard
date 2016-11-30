@@ -12,6 +12,11 @@ export class Util {
         return typeof value != 'symbol' && !isNaN(parseFloat(value)) && isFinite(value) && parseFloat(value) >= 0
     }
 
+    static seperateToCapitalLetters(str){
+        var capitalLetterRegex = /([A-Z]?[^A-Z]*)/g
+        return str.match(capitalLetterRegex).slice(0,-1).join(' ')
+    }
+
     static normalizeValues(data) {
         var rowNumber = 1;
         var sumAllValues = 0
@@ -19,8 +24,9 @@ export class Util {
 
         for (var key in data) {
             if (key != 'header' && key != 'outerRowNumber' && this.isPositiveNumber(data[key])) {
+                var header = this.seperateToCapitalLetters(key)
                 newData.push({
-                    header: key,
+                    header: header,
                     value: Math.round(data[key]),
                     rowNumber: rowNumber,
                     outerRowNumber: data.outerRowNumber
@@ -28,6 +34,7 @@ export class Util {
                 rowNumber++;
             }
         }
+        console.log(newData)
         //
         // if (sumAllValues < 100) {
         //     var diff = 100 - sumAllValues

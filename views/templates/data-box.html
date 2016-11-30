@@ -5,15 +5,15 @@
 </div>
 <div class="data-content-container">
     <div class="data-content-padding">
-        <div *ngIf="header === 'Types'">
+        <div class="data-box-content" *ngIf="header === 'Types'">
             <hr class="hr1">
             <hr class="hr2">
             <types-data [_data]="data"></types-data>
         </div>
-        <div *ngIf="header === 'Severities'">
+        <div class="data-box-content" *ngIf="header === 'Severities'">
             <severities-data [_data]="data"></severities-data>
         </div>
-        <div *ngIf="header === 'Sources(%)'">
+        <div class="data-box-content" *ngIf="header === 'Sources(%)'">
             <sources-data [_data]="data"></sources-data>
         </div>
     </div>
