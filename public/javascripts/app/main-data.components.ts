@@ -1,6 +1,5 @@
 import {Component} from 'angular2/core';
 import  {DataRowComponent} from './data-row.components.js'
-import {Parse} from '../util/parse.js'
 
 @Component({
     selector: 'main-data',
@@ -14,23 +13,29 @@ export class MainDataComponent {
 
     constructor() {
         var thisComponent = this;
-        Parse.parseJson(function (data) {
-            thisComponent.clearWeb = {
-                header: 'Clear Web',
-                typesData: data.ClearWeb.Types,
-                severitiesData: data.ClearWeb.Severities,
-                sourcesData: data.ClearWeb.Sources,
-                outerRowNumber: 1,
-                headerImage: 'images/clearWeb.png'
+        $.ajax({
+            type: 'get',
+            url: '/getdata',
+            contentType: 'application/json',
+            success: function (data) {
+                data = JSON.parse(data)
+                thisComponent.clearWeb = {
+                    header: 'Clear Web',
+                    typesData: data.ClearWeb.Types,
+                    severitiesData: data.ClearWeb.Severities,
+                    sourcesData: data.ClearWeb.Sources,
+                    outerRowNumber: 1,
+                    headerImage: 'images/clearWeb.png'
+                }
+                thisComponent.darkWeb = {
+                    header: 'Dark Web',
+                    typesData: data.DarkWeb.Types,
+                    severitiesData: data.DarkWeb.Severities,
+                    sourcesData: data.DarkWeb.Sources,
+                    outerRowNumber: 2,
+                    headerImage: 'images/darkWeb.png'
+                }
             }
-            thisComponent.darkWeb = {
-                header: 'Dark Web',
-                typesData: data.DarkWeb.Types,
-                severitiesData: data.DarkWeb.Severities,
-                sourcesData: data.DarkWeb.Sources,
-                outerRowNumber: 2,
-                headerImage: 'images/darkWeb.png'
-            }
-        });
+        })
     }
 }
