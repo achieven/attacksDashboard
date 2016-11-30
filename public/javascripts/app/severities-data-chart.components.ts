@@ -19,51 +19,46 @@ export class SeveritiesDataChartComponent {
 
     ngAfterViewInit() {
         var chartSelector = '#' + this.chartId
-        var isIeBrowser = Util.isIeBrowser()
         var labelCounter = 0
         new Chartist.Pie(chartSelector, {
             series: [this.data.High, this.data.Medium, this.data.Low]
         }, {
             donut: true,
             donutWidth: '15%',
-            showLabel: isIeBrowser,
-            labelInterpolationFnc: function(value) {
+            showLabel: false,
+            labelInterpolationFnc: function (value) {
                 var label = labelCounter === 0 ? 'High' : labelCounter === 1 ? 'Medium' : labelCounter === 2 ? 'Low' : undefined
                 labelCounter++
                 return label + ': ' + value
             }
-            
-        }).on('draw', function(data) {
-            if(isIeBrowser){
-                $('#error-to-show').html('Using Internet Explorer and having problems with charts?<br> Sorry! :) &nbsp &nbsp Please use Chrome / Firefox / Safari.')
-            }
-            else {
-                if (data.type === 'slice') {
-                    var animateDonutPie = function(){
-                        var pathLength = data.element._node.getTotalLength();
-                        data.element.attr({
-                            'stroke-dasharray': pathLength + 'px ' + pathLength + 'px'
-                        });
-                        var animationDefinition = {
-                            'stroke-dashoffset': {
-                                id: 'anim' + data.index,
-                                dur: 1000,
-                                from: -pathLength + 'px',
-                                to: '0px',
-                                easing: Chartist.Svg.Easing.easeOutQuint,
-                                fill: 'freeze'
-                            }
-                        };
-                        if (data.index !== 0) {
-                            animationDefinition['stroke-dashoffset'].begin = 'anim' + (data.index - 1) + '.end';
+
+        }).on('draw', function (data) {
+
+            if (data.type === 'slice') {
+                var animateDonutPie = function () {
+                    var pathLength = data.element._node.getTotalLength();
+                    data.element.attr({
+                        'stroke-dasharray': pathLength + 'px ' + pathLength + 'px'
+                    });
+                    var animationDefinition = {
+                        'stroke-dashoffset': {
+                            id: 'anim' + data.index,
+                            dur: 1000,
+                            from: -pathLength + 'px',
+                            to: '0px',
+                            easing: Chartist.Svg.Easing.easeOutQuint,
+                            fill: 'freeze'
                         }
-                        data.element.attr({
-                            'stroke-dashoffset': -pathLength + 'px'
-                        });
-                        data.element.animate(animationDefinition, false);
+                    };
+                    if (data.index !== 0) {
+                        animationDefinition['stroke-dashoffset'].begin = 'anim' + (data.index - 1) + '.end';
                     }
-                    animateDonutPie()
+                    data.element.attr({
+                        'stroke-dashoffset': -pathLength + 'px'
+                    });
+                    data.element.animate(animationDefinition, false);
                 }
+                animateDonutPie()
             }
         })
     }
