@@ -16,7 +16,7 @@
     "public/stylesheets",
     "public/images",
     "public/assets",
-    "routes",
+    "server/routes",
     "server",
     "typings/main",
     "typings/main.d.ts",

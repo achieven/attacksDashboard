@@ -174,11 +174,10 @@
         }
       }
       .severities-data-row-container {
-        //height: calc(100% - #{$severities-chart-height});
-        //height: -webkit-calc(100% - #{$severities-chart-height});
-        //height: -moz-calc(100% - #{$severities-chart-height});
-        //height: -o-calc(100% - #{$severities-chart-height});
-        height: 30%;
+        height: calc(100% - #{$severities-chart-height});
+        height: -webkit-calc(100% - #{$severities-chart-height});
+        height: -moz-calc(100% - #{$severities-chart-height});
+        height: -o-calc(100% - #{$severities-chart-height});
         margin-left: 5%;
         margin-right: 5%;
         position: relative;

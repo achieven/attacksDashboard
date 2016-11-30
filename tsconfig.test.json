@@ -13,6 +13,7 @@
     "attacksDashboard",
     "bin",
     "node_modules",
+    "public/javascripts/app",
     "public/stylesheets",
     "public/images",
     "public/assets",
