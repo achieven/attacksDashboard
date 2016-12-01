@@ -88,36 +88,46 @@
     .hr1 {
       position: absolute;
       left: 0;
-      top: calc(33% - #{$types-data-element-data-words-position});
-      top: -webkit-calc(33% - #{$types-data-element-data-words-position});
-      top: -moz-calc(33% - #{$types-data-element-data-words-position});
-      top: -o-calc(33% - #{$types-data-element-data-words-position});
+      top: 33%;
+      //top: calc(33% - #{$types-data-element-data-words-position});
+      //top: -webkit-calc(33% - #{$types-data-element-data-words-position});
+      //top: -moz-calc(33% - #{$types-data-element-data-words-position});
+      //top: -o-calc(33% - #{$types-data-element-data-words-position});
       width: 100%;
       border-color: $hr-border-color;
     }
     .hr2 {
       position: absolute;
       left: 0;
-      top: calc(66% - #{$types-data-element-data-words-position});
-      top: -webkit-calc(66% - #{$types-data-element-data-words-position});
-      top: -moz-calc(66% - #{$types-data-element-data-words-position});
-      top: -o-calc(66% - #{$types-data-element-data-words-position});
+      top: 66%;
+      //top: calc(66% - #{$types-data-element-data-words-position});
+      //top: -webkit-calc(66% - #{$types-data-element-data-words-position});
+      //top: -moz-calc(66% - #{$types-data-element-data-words-position});
+      //top: -o-calc(66% - #{$types-data-element-data-words-position});
       width: 100%;
       border-color: $hr-border-color;
     }
     .data-content-padding {
-      padding: $data-content-padding-inside-box;
+      padding-top:10px;
+      padding-left:10px;
+      padding-right:10px;
+
+     // padding: $data-content-padding-inside-box;
       height: 100%;
       .data-box-content {
         height: 100%;
 
         .types-data-row {
           width: 100%;
-          height: $types-data-row-height;
-          padding-bottom: calc(33% - #{$types-data-row-height});
-          padding-bottom: -webkit-calc(33% - #{$types-data-row-height});
-          padding-bottom: -moz-calc(33% - #{$types-data-row-height});
-          padding-bottom: -o-calc(33% - #{$types-data-row-height});
+          //height: $types-data-row-height;
+          height: 33%;
+          //margin-top: 10px;
+          //margin-bottom: 10px;
+          //margin-bottom:
+          //padding-bottom: calc(33% - #{$types-data-row-height});
+          //padding-bottom: -webkit-calc(33% - #{$types-data-row-height});
+          //padding-bottom: -moz-calc(33% - #{$types-data-row-height});
+          //padding-bottom: -o-calc(33% - #{$types-data-row-height});
           .types-data-element {
             width: 50%;
             height: 100%;
