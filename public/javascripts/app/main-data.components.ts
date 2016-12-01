@@ -20,7 +20,7 @@ export class MainDataComponent {
             success: function (data) {
                 data = JSON.parse(data)
                 thisComponent.clearWeb = {
-                    header: 'Clear Web',
+                    header: 'CLEAR WEB',
                     typesData: data.ClearWeb.Types,
                     severitiesData: data.ClearWeb.Severities,
                     sourcesData: data.ClearWeb.Sources,
@@ -28,7 +28,7 @@ export class MainDataComponent {
                     headerImage: 'images/clearWeb.png'
                 }
                 thisComponent.darkWeb = {
-                    header: 'Dark Web',
+                    header: 'DARK WEB',
                     typesData: data.DarkWeb.Types,
                     severitiesData: data.DarkWeb.Severities,
                     sourcesData: data.DarkWeb.Sources,

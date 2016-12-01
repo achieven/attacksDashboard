@@ -16,31 +16,31 @@ export class TypesDataComponent {
         if (_data) {
             this.firstRow = [
                 {
-                    header: 'Attack Indication',
+                    header: 'ATTACK INDICATION',
                     number: _data.AttackIndication,
                     imagePath: 'images/attackIndication.png'
                 },
                 {
-                    header: 'Data Leakage',
+                    header: 'DATA LEAKAGE',
                     number: _data.DataLeakage,
                     imagePath: 'images/dataLeakage.png'
                 }
             ]
             this.secondRow = [
                 {
-                    header: 'Phishing',
+                    header: 'PHISHING',
                     number: _data.Phishing,
                     imagePath: 'images/phishing.png'
                 },
                 {
-                    header: 'Brand Security',
+                    header: 'BRAND SECURITY',
                     number: _data.BrandSecurity,
                     imagePath: 'images/brandSecurity.png'
                 }
             ]
             this.thirdRow = [
                 {
-                    header: 'Exploitable Data',
+                    header: 'EXPLOITABLE DATA',
                     number: _data.ExploitableData,
                     imagePath: 'images/exploitableData.png'
                 },

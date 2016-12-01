@@ -10,7 +10,7 @@ export class Util {
 
     static seperateToCapitalLetters(str){
         var capitalLetterRegex = /([A-Z]?[^A-Z]*)/g
-        return str.match(capitalLetterRegex).slice(0,-1).join(' ')
+        return str.match(capitalLetterRegex).slice(0,-1).join(' ').toUpperCase()
     }
 
     static normalizeValues(data) {

@@ -14,9 +14,9 @@ export class SeveritiesDataRowComponent {
 
     @Input() set _data(_data:any) {
         if(_data){
-            this.highElement = {header: 'High', value: _data.High}
-            this.mediumElement = {header: 'Medium', value: _data.Medium}
-            this.lowElement = {header: 'Low', value: _data.Low}
+            this.highElement = {header: 'HIGH', value: _data.High}
+            this.mediumElement = {header: 'MEDIUM', value: _data.Medium}
+            this.lowElement = {header: 'LOW', value: _data.Low}
         }
     }
 }
