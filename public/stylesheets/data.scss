@@ -114,11 +114,11 @@
       height: 100%;
       .data-box-content {
         height: 100%;
+        padding-top: $data-content-padding-inside-box;
         .types-data-row-container {
           width: 100%;
           height: 33.33%;
           .types-data-row {
-            padding-top: $data-content-padding-inside-box;
             height: calc(100% - #{$data-content-padding-inside-box} - #{$types-data-row-padding-from-hr});
             height: -webkit-calc(100% - #{$data-content-padding-inside-box} - #{$types-data-row-padding-from-hr});
             height: -moz-calc(100% - #{$data-content-padding-inside-box} - #{$types-data-row-padding-from-hr});
@@ -218,8 +218,7 @@
           height: 20%;
           width: 100%;
           .sources-data-row-container {
-            padding-top: $data-content-padding-inside-box;
-            height: (100%);
+            height: 100%;
             .sources-data-row-header-container {
               height: 50%;
               width: 100%;
