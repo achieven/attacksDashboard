@@ -260,12 +260,6 @@
             .sources-data-row-header-container {
               height: 50%;
               width: 100%;
-              .attacks-dashboard-sources-text {
-                font-size: 12px;
-                @media screen and(max-width: 767px) {
-                  font-size: 7px;
-                }
-              }
             }
             .sources-data-row-bar-value-container {
               height: 50%;
