@@ -212,21 +212,9 @@
           .sources-data-row-container {
             padding-bottom: $padding-between-sources-rows;
             height: (100%);
-            .sources-row-data-header-value-container {
+            .sources-data-row-header-container {
               height: 50%;
               width: 100%;
-              position: relative;
-              .sources-data-row-header {
-                position: absolute;
-                width: $sources-data-row-left-element-width;
-                left: 0;
-                top: 0;
-              }
-              .sources-data-row-value {
-                position: absolute;
-                right: $sources-data-row-mobile-seperate-text-and-value;
-                top: 0;
-              }
               .attacks-dashboard-sources-text {
                 font-size: 12px;
                 @media screen and(max-width: 767px) {
@@ -234,22 +222,27 @@
                 }
               }
             }
-            .sources-data-row-bar-container {
+            .sources-data-row-bar-value-container {
               height: 50%;
-              width: $sources-data-row-left-element-width;
+              width: 100%;
               @media screen and(max-width: 767px) {
                 width: 100%;
               }
               position: relative;
               .sources-data-row-bar {
                 height: 100%;
-                width: 100%;
+                width: 90%;
                 position: absolute;
                 left: 0;
                 top: 0;
                 .ct-series {
                   stroke-linecap: $round-the-bar-chart;
                 }
+              }
+              .sources-data-row-value {
+                position: absolute;
+                right: $sources-data-row-mobile-seperate-text-and-value;
+                top: 0;
               }
             }
           }
