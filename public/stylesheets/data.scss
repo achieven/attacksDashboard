@@ -219,12 +219,6 @@
             height: -webkit-calc(#{$data-content-padding-inside-box} * 3 + ((#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding}) * 2));
             height: -webkit-calc(#{$data-content-padding-inside-box} * 3 + ((#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding}) * 2));
           }
-          //height: -webkit-calc(100% - #{$data-content-padding-inside-box} * 3) - ((#{$attacks-dashboard-text-size} + #{$div-text-automatic-padding}) * 2);
-          //height: -moz-calc(100% - #{$data-content-padding-inside-box} * 3) - ((#{$attacks-dashboard-text-size} + #{$div-text-automatic-padding}) * 2);
-          //height: -o-calc(100% - #{$data-content-padding-inside-box} * 3) - ((#{$attacks-dashboard-text-size} + #{$div-text-automatic-padding}) * 2);
-          //height: -webkit-calc(100% - #{$severities-chart-height});
-          //height: -moz-calc(100% - #{$severities-chart-height});
-          //height: -o-calc(100% - #{$severities-chart-height});
           padding-left: $data-content-padding-inside-box;
           position: relative;
           width: calc(100% - (#{$data-content-padding-inside-box} * 3));
