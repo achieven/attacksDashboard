@@ -235,7 +235,7 @@
               }
             }
             .sources-data-row-bar-container {
-              height: 100%;
+              height: 50%;
               width: $sources-data-row-left-element-width;
               @media screen and(max-width: 767px) {
                 width: 100%;
@@ -243,9 +243,10 @@
               position: relative;
               .sources-data-row-bar {
                 height: 100%;
+                width: 100%;
                 position: absolute;
-                left: $sources-data-row-bar-exactly-under-text;
-                top: $sources-data-row-bar-seperate-from-text;
+                left: 0;
+                top: 0;
                 .ct-series {
                   stroke-linecap: $round-the-bar-chart;
                 }

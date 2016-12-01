@@ -8,7 +8,7 @@ import {Util} from '../public/javascripts/util/util'
 
 describe('App Component Test', function () {
 
-    it('should create header and rowNumber, and ignore "header", "outerRowNumber" and values which are not numbers in the calculation, but approve strings which can be parsed to numbers', function(){
+    it('should create header seperated by Capital letters, and rowNumber, and ignore "header", "outerRowNumber" keys', function(){
         var data = {
             header: 'Clear Web',
             invalidNumber1: "",

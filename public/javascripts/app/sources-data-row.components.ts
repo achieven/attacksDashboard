@@ -7,59 +7,40 @@ import {Input, Component} from 'angular2/core';
 
 export class SourcesDataRowComponent {
     header:string = '';
-    value:number = 0;
+    value:string = '';
     chartId:string = '';
 
 
     @Input() set _data(_data:any) {
         var headerSeperatedBycapitalLetters = _data.header;
         this.header = headerSeperatedBycapitalLetters
-        this.value = _data.value;
         this.chartId = 'bar' + _data.outerRowNumber + '_' + _data.rowNumber;
+        this.value = _data.value;
     }
 
     ngAfterViewInit() {
-
+        var thisComponent = this
         var chartSelector = '#' + this.chartId
-        new Chartist.Bar(chartSelector, {
-            series: [[this.value], [100 - this.value]]
-        }, {
-            stackBars: true,
-            horizontalBars: true,
-            showLabel: false,
-            axisY: {
-                offset: 0
-            },
-            chartPadding: {
-                bottom: 15,
-            }
-        }).on('draw', function (data) {
-            if (data.type === 'bar') {
-                var styleBarChart = function () {
-                    var newStyle = 'stroke: '
-                    var isSeriesA = data.element._node.parentNode.className.baseVal.indexOf('ct-series-a') > 0;
-                    var isSeriesB = data.element._node.parentNode.className.baseVal.indexOf('ct-series-b') > 0;
-                    const blueStroke = '#8AB4D4', blackStroke = '#1D384B'
-                    if (isSeriesA) {
-                        newStyle += blueStroke
-                    }
-                    else if (isSeriesB) {
-                        newStyle += blackStroke
-                    }
-                    data.element.attr({
-                        style: newStyle
-                    })
-                }
-                styleBarChart()
-            }
-            if (data.type === 'label') {
-                var removeLabels = function () {
-                    data.element.attr({
-                        style: 'display: none;'
-                    })
-                }
-                removeLabels()
-            }
+
+        function renderChart() {
+            var chartWidth = $(chartSelector).width(), chartHeight = $(chartSelector).height()
+            var leftOffset = 5
+            var leftBarX1 = leftOffset
+            var leftBarX2 = 5 + (thisComponent.value * (chartWidth - 10) / 100)
+            var rightBarX1 = leftBarX2
+            var rightBarX2 = chartWidth - 5
+            var bothBarsY = chartHeight / 2
+
+            var chartSvg = '<svg class="ct-chart-bar ct-horizontal-bars" height="100%" width="100%">' +
+                '<g class="ct-series ct-series-b"> <line class="ct-bar" style="stroke: #1D384B;" x1="' + rightBarX1 + '" x2="' + rightBarX2 + '" y1="' + bothBarsY + '" y2="' + bothBarsY + '"></line>' +
+                '<g class="ct-series ct-series-a"> <line class="ct-bar" style="stroke: #8AB4D4;" x1="' + leftBarX1 + '" x2="' + leftBarX2 + '" y1="' + bothBarsY + '" y2="' + bothBarsY + '"></line>' +
+                '</svg>'
+            $(chartSelector).html(chartSvg)
+        }
+
+        renderChart()
+        $(window).resize(function () {
+            renderChart()
         })
     }
 }
