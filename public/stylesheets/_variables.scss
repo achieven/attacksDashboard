@@ -40,7 +40,7 @@ $div-text-automatic-padding: 5px;
 $div-text-mobile-automatic-padding: 1px;
 
 
-$types-severities-width: calc(((100% - #{$web-header-width} - #{$sources-data-width} - (#{$data-presentation-padding} * 8)) / 2 - 1px));
-$webkit-types-severities-width: -webkit-calc(((100% - #{$web-header-width} - #{$sources-data-width} - (#{$data-presentation-padding} * 8)) / 2 - 1px));
-$moz-types-severities-width: -moz-calc(((100% - #{$web-header-width} - #{$sources-data-width} - (#{$data-presentation-padding} * 8)) / 2 - 1px));
-$o-types-severities-width: -o-calc(((100% - #{$web-header-width} - #{$sources-data-width} - (#{$data-presentation-padding} * 8)) / 2 - 1px));
+$types-severities-width: calc(((100% - #{$web-header-width} - #{$sources-data-width} - (#{$data-presentation-padding} * 8)) / 2));
+$webkit-types-severities-width: -webkit-calc(((100% - #{$web-header-width} - #{$sources-data-width} - (#{$data-presentation-padding} * 8)) / 2));
+$moz-types-severities-width: -moz-calc(((100% - #{$web-header-width} - #{$sources-data-width} - (#{$data-presentation-padding} * 8)) / 2));
+$o-types-severities-width: -o-calc(((100% - #{$web-header-width} - #{$sources-data-width} - (#{$data-presentation-padding} * 8)) / 2));
