@@ -157,10 +157,11 @@
     width: $moz-types-severities-width;
     width: $o-types-severities-width;
     position: absolute;
+    left: 45%;//safari doesnt support calc inside calc
     left: calc((#{$web-header-width} + #{$types-severities-width} + 4 * #{$data-presentation-padding}));
-    left: calc((#{$web-header-width} + #{$webkit-types-severities-width} + 4 * #{$data-presentation-padding}));
-    left: calc((#{$web-header-width} + #{$moz-types-severities-width} + 4 * #{$data-presentation-padding}));
-    left: calc((#{$web-header-width} + #{$o-types-severities-width} + 4 * #{$data-presentation-padding}));
+    left: -webkit-calc((#{$web-header-width} + #{$webkit-types-severities-width} + 4 * #{$data-presentation-padding}));
+    left: -moz-calc((#{$web-header-width} + #{$moz-types-severities-width} + 4 * #{$data-presentation-padding}));
+    left: -o-calc((#{$web-header-width} + #{$o-types-severities-width} + 4 * #{$data-presentation-padding}));
     .severities-data-row-container {
       height: auto;
       height: calc(#{$data-content-padding-inside-box} * 3 + ((#{$attacks-dashboard-text-size} + #{$div-text-automatic-padding}) * 2));
@@ -211,10 +212,11 @@
     height: 100%;
     width: $sources-data-width;
     position: absolute;
+    left: 79%;//safari doesnt support calc inside calc
     left: calc((#{$web-header-width} + 2 * #{$types-severities-width} + 6 * #{$data-presentation-padding}));
-    left: calc((#{$web-header-width} + 2 * #{$webkit-types-severities-width} + 6 * #{$data-presentation-padding}));
-    left: calc((#{$web-header-width} + 2 * #{$moz-types-severities-width} + 6 * #{$data-presentation-padding}));
-    left: calc((#{$web-header-width} + 2 * #{$o-types-severities-width} + 6 * #{$data-presentation-padding}));
+    left: -webkit-calc((#{$web-header-width} + 2 * #{$webkit-types-severities-width} + 6 * #{$data-presentation-padding}));
+    left: -moz-calc((#{$web-header-width} + 2 * #{$moz-types-severities-width} + 6 * #{$data-presentation-padding}));
+    left: -o-calc((#{$web-header-width} + 2 * #{$o-types-severities-width} + 6 * #{$data-presentation-padding}));
     top: 0;
     .data-box-content-sources {
       height: 20%;

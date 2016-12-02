@@ -1,9 +1,10 @@
 import {Injectable} from "angular2/core";
 @Injectable()
 export class Util {
-    static isIeBrowser() {
-        var userAgent = navigator.userAgent
-        if ((userAgent.indexOf('Trident') > -1 && userAgent.indexOf('rv:11.0') > -1) || userAgent.indexOf('MSIE') > -1) {
+    static isEdgeOrExplorer() {
+        var browserName = new UAParser().getBrowser().name
+        console.log(browserName)
+        if (browserName === 'IE' || browserName === 'Edge'){
             return true
         }
     }

@@ -33,7 +33,7 @@ export class SeveritiesDataChartComponent {
             }
 
         }).on('draw', function (data) {
-            var isIeBrowser = Util.isIeBrowser()
+            var isIeBrowser = Util.isEdgeOrExplorer()
             if(!isIeBrowser) {
                 if (data.type === 'slice') {
                     var animateDonutPie = function () {
