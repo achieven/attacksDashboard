@@ -4,10 +4,9 @@ $mobile-main-header-height: 30px;
 $main-header-height: 40px;
 $main-body-margins-color: #182934;
 $main-body-background-color: #225279;
+$margin-between-main-header-and-data: 5%;
 
-
-$data-row-height: 45%;
-$padding-between-main-rows: 15px;
+$margin-between-data-rows: 15px;
 $data-presentation-padding: 0.5%;
 $web-header-width: 10%;
 $data-row-header-height: 15%;
@@ -15,7 +14,9 @@ $data-content-container-color: #224A6B;
 $hr-border-color: #1F3A4F;
 $data-content-padding-inside-box: 10px;
 
-$types-data-row-height: 30%;
+
+
+$types-data-row-height: 33.33%;
 $types-data-row-padding-from-hr: 5px;
 $types-data-element-image-container-width: 20%;
 $margin-between-types-data-image-and-text: 5%;
@@ -25,16 +26,21 @@ $types-data-element-data-words-position: 10px;
 
 
 $sources-data-width: 20%;
-$padding-between-sources-rows: 2%;
-$number-of-sources-rows: 5;
 $sources-data-row-left-element-width: 90%;
 $sources-data-row-mobile-seperate-text-and-value: -5px;
 $sources-data-row-bar-seperate-from-text: 20%;
 $round-the-bar-chart: round;
 
 
-$div-text-automatic-padding: 5px;
-$div-text-mobile-automatic-padding: 1px;
+
 $attacks-dashboard-text-color: white;
 $attacks-dashboard-text-size: 12px;
 $attacks-dashboard-mobile-text-size: 5px;
+$div-text-automatic-padding: 5px;
+$div-text-mobile-automatic-padding: 1px;
+
+
+$types-severities-width: calc(((100% - #{$web-header-width} - #{$sources-data-width} - (#{$data-presentation-padding} * 8)) / 2 - 1px));
+$webkit-types-severities-width: -webkit-calc(((100% - #{$web-header-width} - #{$sources-data-width} - (#{$data-presentation-padding} * 8)) / 2 - 1px));
+$moz-types-severities-width: -moz-calc(((100% - #{$web-header-width} - #{$sources-data-width} - (#{$data-presentation-padding} * 8)) / 2 - 1px));
+$o-types-severities-width: -o-calc(((100% - #{$web-header-width} - #{$sources-data-width} - (#{$data-presentation-padding} * 8)) / 2 - 1px));

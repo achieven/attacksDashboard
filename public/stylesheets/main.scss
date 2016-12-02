@@ -36,10 +36,9 @@ html,body {
             margin-right: 5%;
             overflow: auto;
             #main-body {
-                padding-top: 5%;
-                padding-bottom: 5%;
-                padding-left: 2%;
-                padding-right: 2%;
+                margin-top: $margin-between-main-header-and-data;
+                margin-left: 2%;
+                margin-right: 2%;
                 height: 100%;
             }
         }
