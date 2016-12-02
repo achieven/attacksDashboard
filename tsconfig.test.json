@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "system",
+    "module": "commonjs",
     "moduleResolution": "node",
     "sourceMap": true,
     "emitDecoratorMetadata": true,
@@ -13,13 +13,13 @@
     "attacksDashboard",
     "bin",
     "node_modules",
+    "public/javascripts/app",
     "public/stylesheets",
     "public/assets",
-    "server/routes",
+    "routes",
     "server",
     "typings/main",
     "typings/main.d.ts",
-    "views",
-    "test"
+    "views"
   ]
 }

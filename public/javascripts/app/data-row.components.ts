@@ -19,9 +19,9 @@ export class DataRowComponent {
     @Input() set _webData(_webData: any){
         if(_webData){
             this.header = {header: _webData.header, image: _webData.headerImage};
-            this.typesData = $.extend({},_webData.typesData,{header: 'Types'});
-            this.severitiesData = $.extend({},_webData.severitiesData,{header: 'Severities',  outerRowNumber: _webData.outerRowNumber});
-            this.sourcesData = $.extend({},_webData.sourcesData,{header: 'Sources(%)',  outerRowNumber: _webData.outerRowNumber});
+            this.typesData = $.extend({},_webData.typesData,{header: 'TYPES'});
+            this.severitiesData = $.extend({},_webData.severitiesData,{header: 'SEVERITIES',  outerRowNumber: _webData.outerRowNumber});
+            this.sourcesData = $.extend({},_webData.sourcesData,{header: 'SOURCES(%)',  outerRowNumber: _webData.outerRowNumber});
         }
     }
 }

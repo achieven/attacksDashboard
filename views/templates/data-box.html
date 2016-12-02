@@ -1,19 +1,19 @@
 <div class="data-header-container">
-    <div class="data-header attacks-dashboard-text centralize-element-vertically">
+    <div class="data-header attacks-dashboard-text centralize-element-vertically attacks-dashboard-header-text">
         {{header}}
     </div>
 </div>
 <div class="data-content-container">
     <div class="data-content-padding">
-        <div *ngIf="header === 'Types'">
+        <div class="data-box-content" *ngIf="header === 'TYPES'">
             <hr class="hr1">
             <hr class="hr2">
             <types-data [_data]="data"></types-data>
         </div>
-        <div *ngIf="header === 'Severities'">
+        <div class="data-box-content" *ngIf="header === 'SEVERITIES'">
             <severities-data [_data]="data"></severities-data>
         </div>
-        <div *ngIf="header === 'Sources(%)'">
+        <div class="data-box-content" *ngIf="header === 'SOURCES(%)'">
             <sources-data [_data]="data"></sources-data>
         </div>
     </div>

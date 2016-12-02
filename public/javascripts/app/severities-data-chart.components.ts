@@ -19,27 +19,24 @@ export class SeveritiesDataChartComponent {
 
     ngAfterViewInit() {
         var chartSelector = '#' + this.chartId
-        var isIeBrowser = Util.isIeBrowser()
         var labelCounter = 0
         new Chartist.Pie(chartSelector, {
             series: [this.data.High, this.data.Medium, this.data.Low]
         }, {
             donut: true,
             donutWidth: '15%',
-            showLabel: isIeBrowser,
-            labelInterpolationFnc: function(value) {
+            showLabel: false,
+            labelInterpolationFnc: function (value) {
                 var label = labelCounter === 0 ? 'High' : labelCounter === 1 ? 'Medium' : labelCounter === 2 ? 'Low' : undefined
                 labelCounter++
                 return label + ': ' + value
             }
-            
-        }).on('draw', function(data) {
-            if(isIeBrowser){
-                $('#error-to-show').html('Using Internet Explorer and having problems with charts?<br> Sorry! :) &nbsp &nbsp Please use Chrome / Firefox / Safari.')
-            }
-            else {
+
+        }).on('draw', function (data) {
+            var isIeBrowser = Util.isEdgeOrExplorer()
+            if(!isIeBrowser) {
                 if (data.type === 'slice') {
-                    var animateDonutPie = function(){
+                    var animateDonutPie = function () {
                         var pathLength = data.element._node.getTotalLength();
                         data.element.attr({
                             'stroke-dasharray': pathLength + 'px ' + pathLength + 'px'
