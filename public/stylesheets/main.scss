@@ -43,6 +43,7 @@ html, body {
       height: -moz-calc(100% - #{$laptop-tablet-main-header-height});
       height: -o-calc(100% - #{$laptop-tablet-main-header-height});
       @media only screen and (max-width: 767px) {
+        top: $mobile-main-header-height;
         height: $mobile-main-header-height;
         height: calc(100% - #{$mobile-main-header-height});
         height: -webkit-calc(100% - #{$mobile-main-header-height});
