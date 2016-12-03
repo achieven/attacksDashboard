@@ -1,56 +1,80 @@
 @import 'variables';
 
-html,body {
-    margin: 0;
-    padding: 0;
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  #main-container {
+    position: relative;
+    width: 100%;
     height: 100%;
-
+    overflow: scroll;
     #main-header {
-        background-color: $header-background-color;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: $header-background-color;
+      width: 100%;
+      height: $laptop-tablet-main-header-height;
+      @media only screen and (max-width: 767px) {
+        height: $mobile-main-header-height;
+      }
+      #intsights-header-container {
         position: relative;
         width: 100%;
-        height: $laptop-tablet-main-header-height;
-        @media only screen and (max-width: 767px) {
-            height: $mobile-main-header-height;
-        }
+        height: 100%;
         #intsights-header {
-            position: absolute;
-            left: 5px;
-            #intsights-header-image {
-                height: 50%;
-            }
+          position: absolute;
+          left: 5px;
+          #intsights-header-image {
+            height: 50%;
+          }
         }
+      }
     }
 
     #main-body-with-margins {
-        background-color: $main-body-margins-color;
-        width: 100%;
-        height: calc(100% - #{$laptop-tablet-main-header-height});
-        height: -webkit-calc(100% - #{$laptop-tablet-main-header-height});
-        height: -moz-calc(100% - #{$laptop-tablet-main-header-height});
-        height: -o-calc(100% - #{$laptop-tablet-main-header-height});
-        #main-body-background {
-            background-color: $main-body-background-color;
-            height: 100%;
-            margin-left: 5%;
-            margin-right: 5%;
-            overflow: auto;
-            #main-body {
-                margin-top: $margin-between-main-header-and-data;
-                margin-left: 2%;
-                margin-right: 2%;
-                height: 100%;
-            }
+      position: absolute;
+      background-color: $main-body-margins-color;
+      width: 100%;
+      top:  #{$laptop-tablet-main-header-height};
+      height: calc(100% - #{$laptop-tablet-main-header-height});
+      height: -webkit-calc(100% - #{$laptop-tablet-main-header-height});
+      height: -moz-calc(100% - #{$laptop-tablet-main-header-height});
+      height: -o-calc(100% - #{$laptop-tablet-main-header-height});
+      @media only screen and (max-width: 767px) {
+        height: $mobile-main-header-height;
+        height: calc(100% - #{$mobile-main-header-height});
+        height: -webkit-calc(100% - #{$mobile-main-header-height});
+        height: -moz-calc(100% - #{$mobile-main-header-height});
+        height: -o-calc(100% - #{$mobile-main-header-height});
+      }
+      #main-body-background {
+        background-color: $main-body-background-color;
+        height: 100%;
+        margin-left: 5%;
+        margin-right: 5%;
+        position: relative;
+        #main-body {
+          position: absolute;
+          width: calc(100% - 5%);
+          top: $laptop-tablet-main-header-height;
+          height: calc(100% - #{$laptop-tablet-main-header-height});
+          height: -webkit-calc(100% - #{$laptop-tablet-main-header-height});
+          height: -moz-calc(100% - #{$laptop-tablet-main-header-height});
+          height: -o-calc(100% - #{$laptop-tablet-main-header-height});
+          margin-left: 2%;
+          margin-right: 2%;
+          @media only screen and (max-width: 767px) {
+            height: calc(100% - #{$margin-between-main-header-and-data});
+            height: -webkit-calc(100% - #{$margin-between-main-header-and-data});
+            height: -moz-calc(100% - #{$margin-between-main-header-and-data});
+            height: -o-calc(100% - #{$margin-between-main-header-and-data});
+          }
         }
+      }
     }
-    .attacks-dashboard-text {
-        color: $attacks-dashboard-text-color;
-        font-size: $attacks-dashboard-text-size;
-        font-family: 'Open Sans', sans-serif;
-        @media screen and(max-width: 767px) {
-            font-size: $attacks-dashboard-mobile-text-size;
-        }
-    }
+  }
 }
 
 
