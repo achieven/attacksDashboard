@@ -6,6 +6,9 @@
   font-family: 'Open Sans', sans-serif;
   @media only screen and(max-width: 767px) {
     font-size: $attacks-dashboard-mobile-text-size;
+    @media only screen and(orientation: landscape){
+      font-size: $attacks-dashboard-mobile-landscape-text-size;
+    }
   }
 
 }
