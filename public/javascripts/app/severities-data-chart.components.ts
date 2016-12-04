@@ -20,26 +20,24 @@ export class SeveritiesDataChartComponent {
     ngAfterViewInit() {
         var chartSelector = '#' + this.chartId
         var labelCounter = 0
+        var slicesDrawn = 0
         new Chartist.Pie(chartSelector, {
             series: [this.data.High, this.data.Medium, this.data.Low]
         }, {
             donut: true,
             donutWidth: '15%',
-            showLabel: false,
-            labelInterpolationFnc: function (value) {
-                var label = labelCounter === 0 ? 'High' : labelCounter === 1 ? 'Medium' : labelCounter === 2 ? 'Low' : undefined
-                labelCounter++
-                return label + ': ' + value
-            }
+            showLabel: false
 
         }).on('draw', function (data) {
             var isEdgeOrExplorer = Util.isEdgeOrExplorer()
             if(!isEdgeOrExplorer) {
-                if (data.type === 'slice') {
+                if (data.type === 'slice' && slicesDrawn < 3) {
                     var animateDonutPie = function () {
+                        slicesDrawn ++
                         var pathLength = data.element._node.getTotalLength();
                         data.element.attr({
-                            'stroke-dasharray': pathLength + 'px ' + pathLength + 'px'
+                            'stroke-dasharray': pathLength + 'px ' + pathLength + 'px',
+                            'stroke-dashoffset': -pathLength + 'px'
                         });
                         var animationDefinition = {
                             'stroke-dashoffset': {
@@ -54,9 +52,6 @@ export class SeveritiesDataChartComponent {
                         if (data.index !== 0) {
                             animationDefinition['stroke-dashoffset'].begin = 'anim' + (data.index - 1) + '.end';
                         }
-                        data.element.attr({
-                            'stroke-dashoffset': -pathLength + 'px'
-                        });
                         data.element.animate(animationDefinition, false);
                     }
                     animateDonutPie()
