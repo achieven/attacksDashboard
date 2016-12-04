@@ -203,6 +203,15 @@
       .severities-chart {
         width: 100%;
         height: 100%;
+        .ct-series-a path {
+          stroke: $severities-chart-high-color;
+        }
+        .ct-series-b path {
+          stroke: $severities-chart-medium-color;
+        }
+        .ct-series-c path {
+          stroke: $severities-chart-low-color;
+        }
       }
     }
     .severities-data-row-container {
@@ -257,10 +266,21 @@
           .severities-data-element-container-high {
             position: absolute;
             left: 0;
+            .attacks-dashboard-text {
+              color: $severities-chart-high-color;
+            }
+          }
+          .severities-data-element-container-medium {
+            .attacks-dashboard-text {
+              color: $severities-chart-medium-color;
+            }
           }
           .severities-data-element-container-low {
             position: absolute;
             right: 0;
+            .attacks-dashboard-text {
+              color: $severities-chart-low-color;
+            }
           }
           .severities-number-text {
             font-size: $attacks-dashboard-number-text-size;
