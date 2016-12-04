@@ -21,8 +21,7 @@ export class SourcesDataRowComponent {
     ngAfterViewInit() {
         var thisComponent = this
         var chartSelector = '#' + this.chartId
-
-        function renderChart() {
+        function renderBarChart() {
             var chartWidth = $(chartSelector).width(), chartHeight = $(chartSelector).height()
             var roundingBarOffset = 3
             var leftBarX1 = roundingBarOffset
@@ -39,9 +38,8 @@ export class SourcesDataRowComponent {
             $(chartSelector).html(chartSvg)
         }
 
-        renderChart()
-        $(window).resize(function () {
-            renderChart()
-        })
+        renderBarChart()
+        $(window).resize(_.debounce(renderBarChart, 500))
+            
     }
 }
