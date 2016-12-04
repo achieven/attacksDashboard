@@ -38,6 +38,8 @@ $attacks-dashboard-text-size: 11px;
 $attacks-dashboard-mobile-text-size: 5px;
 $div-text-automatic-padding: 4px;
 $div-text-mobile-automatic-padding: 1px;
+$attacks-dashboard-mobile-landscape-text-size: 3px;
+$div-text-mobile-landscape-automatic-padding: 1px;
 
 
 $types-severities-width: calc(((100% - #{$web-header-width} - #{$sources-data-width} - (#{$data-presentation-padding} * 8)) / 2));

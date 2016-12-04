@@ -144,11 +144,17 @@
               bottom: -moz-calc(#{$attacks-dashboard-text-size} + #{$div-text-automatic-padding});
               bottom: -o-calc(#{$attacks-dashboard-text-size} + #{$div-text-automatic-padding});
               left: 0;
-              @media screen and (max-width: 767px) {
+              @media only screen and (max-width: 767px) {
                 bottom: calc(#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding});
                 bottom: -webkit-calc(#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding});
                 bottom: -moz-calc(#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding});
                 bottom: -o-calc(#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding});
+                @media only screen and (orientation: landscape){
+                  bottom: calc(#{$attacks-dashboard-mobile-landscape-text-size} + #{$div-text-mobile-landscape-automatic-padding});
+                  bottom: -webkit-calc(#{$attacks-dashboard-mobile-landscape-text-size} + #{$div-text-mobile-landscape-automatic-padding});
+                  bottom: -moz-calc(#{$attacks-dashboard-mobile-landscape-text-size} + #{$div-text-mobile-landscape-automatic-padding});
+                  bottom: -o-calc(#{$attacks-dashboard-mobile-landscape-text-size} + #{$div-text-mobile-landscape-automatic-padding});
+                }
               }
             }
           }
@@ -175,11 +181,17 @@
       height: -moz-calc(100% - (#{$data-content-padding-inside-box} * 3) - ((#{$attacks-dashboard-text-size} + #{$div-text-automatic-padding}) * 2));
       height: -o-calc(100% - (#{$data-content-padding-inside-box} * 3) - ((#{$attacks-dashboard-text-size} + #{$div-text-automatic-padding}) * 2));
       position: relative;
-      @media screen and (max-width: 767px) {
+      @media only screen and (max-width: 767px) {
         height: calc(100% - (#{$data-content-padding-inside-box} * 3) - ((#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding}) * 2));
         height: -webkit-calc(100% - (#{$data-content-padding-inside-box} * 3) - ((#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding}) * 2));
         height: -moz-calc(100% - (#{$data-content-padding-inside-box} * 3) - ((#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding}) * 2));
         height: -o-calc(100% - (#{$data-content-padding-inside-box} * 3) - ((#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding}) * 2));
+        @media only screen and (orientation: landscape){
+          height: calc(100% - (#{$data-content-padding-inside-box} * 3) - ((#{$attacks-dashboard-mobile-landscape-text-size} + #{$div-text-mobile-landscape-automatic-padding}) * 2));
+          height: -webkit-calc(100% - (#{$data-content-padding-inside-box} * 3) - ((#{$attacks-dashboard-mobile-landscape-text-size} + #{$div-text-mobile-landscape-automatic-padding}) * 2));
+          height: -moz-calc(100% - (#{$data-content-padding-inside-box} * 3) - ((#{$attacks-dashboard-mobile-landscape-text-size} + #{$div-text-mobile-landscape-automatic-padding}) * 2));
+          height: -o-calc(100% - (#{$data-content-padding-inside-box} * 3) - ((#{$attacks-dashboard-mobile-landscape-text-size} + #{$div-text-mobile-landscape-automatic-padding}) * 2));
+        }
       }
       .severities-chart {
         width: 100%;
@@ -192,11 +204,17 @@
       height: -webkit-calc(#{$data-content-padding-inside-box} * 3 + ((#{$attacks-dashboard-text-size} + #{$div-text-automatic-padding}) * 2));
       height: -webkit-calc(#{$data-content-padding-inside-box} * 3 + ((#{$attacks-dashboard-text-size} + #{$div-text-automatic-padding}) * 2));
       height: -webkit-calc(#{$data-content-padding-inside-box} * 3 + ((#{$attacks-dashboard-text-size} + #{$div-text-automatic-padding}) * 2));
-      @media screen and (max-width: 767px) {
+      @media only screen and (max-width: 767px) {
         height: calc(#{$data-content-padding-inside-box} * 3 + ((#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding}) * 2));
         height: -webkit-calc(#{$data-content-padding-inside-box} * 3 + ((#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding}) * 2));
         height: -webkit-calc(#{$data-content-padding-inside-box} * 3 + ((#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding}) * 2));
         height: -webkit-calc(#{$data-content-padding-inside-box} * 3 + ((#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding}) * 2));
+        @media only screen and (orientaion: landscape){
+          height: calc(#{$data-content-padding-inside-box} * 3 + ((#{$attacks-dashboard-mobile-landscape-text-size} + #{$div-text-mobile-landscape-automatic-padding}) * 2));
+          height: -webkit-calc(#{$data-content-padding-inside-box} * 3 + ((#{$attacks-dashboard-mobile-landscape-text-size} + #{$div-text-mobile-landscape-automatic-padding}) * 2));
+          height: -webkit-calc(#{$data-content-padding-inside-box} * 3 + ((#{$attacks-dashboard-mobile-landscape-text-size} + #{$div-text-mobile-landscape-automatic-padding}) * 2));
+          height: -webkit-calc(#{$data-content-padding-inside-box} * 3 + ((#{$attacks-dashboard-mobile-landscape-text-size} + #{$div-text-mobile-landscape-automatic-padding}) * 2));
+        }
       }
       padding-left: $data-content-padding-inside-box;
       position: relative;
@@ -212,11 +230,17 @@
         bottom: -webkit-calc(2 * #{$data-content-padding-inside-box});
         bottom: -moz-calc(2 * #{$data-content-padding-inside-box});
         bottom: -o-calc(2 * #{$data-content-padding-inside-box});
-        @media screen and (max-width: 767px) {
+        @media only screen and (max-width: 767px) {
           height: calc((#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding}) * 2);
           height: -webkit-calc((#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding}) * 2);
           height: -moz-calc((#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding}) * 2);
           height: -o-calc((#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding}) * 2);
+          @media only screen and (orientaion: landscape){
+            height: calc((#{$attacks-dashboard-mobile-landscape-text-size} + #{$div-text-mobile-landscape-automatic-padding}) * 2);
+            height: -webkit-calc((#{$attacks-dashboard-mobile-landscape-text-size} + #{$div-text-mobile-landscape-automatic-padding}) * 2);
+            height: -moz-calc((#{$attacks-dashboard-mobile-landscape-text-size} + #{$div-text-mobile-landscape-automatic-padding}) * 2);
+            height: -o-calc((#{$attacks-dashboard-mobile-landscape-text-size} + #{$div-text-mobile-landscape-automatic-padding}) * 2);
+          }
         }
         .severities-elements-container {
           position: relative;

@@ -67,10 +67,11 @@ html, body {
           margin-left: 2%;
           margin-right: 2%;
           @media only screen and (max-width: 767px) {
-            height: calc(100% - #{$margin-between-main-header-and-data});
-            height: -webkit-calc(100% - #{$margin-between-main-header-and-data});
-            height: -moz-calc(100% - #{$margin-between-main-header-and-data});
-            height: -o-calc(100% - #{$margin-between-main-header-and-data});
+            top: $mobile-main-header-height;
+            height: calc(100% - #{$mobile-main-header-height});
+            height: -webkit-calc(100% - #{$mobile-main-header-height});
+            height: -moz-calc(100% - #{$mobile-main-header-height});
+            height: -o-calc(100% - #{$mobile-main-header-height});
           }
         }
       }
