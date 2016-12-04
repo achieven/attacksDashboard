@@ -35,7 +35,7 @@
           width: 100%;
           text-align: center;
           @media screen and (max-width: 767px) {
-            font-size: 10px;
+            font-size: 9px;
           }
         }
       }
@@ -92,7 +92,7 @@
           float: left;
           .types-data-element-image-container {
             @media screen and (max-width: 768px) {
-                display: none;
+              display: none;
             }
             width: $types-data-element-image-container-width;
             height: 100%;
@@ -121,10 +121,10 @@
             }
           }
           .types-data-element-data-container {
-            width: $types-severities-width;
-            width: $webkit-types-severities-width;
-            width: $moz-types-severities-width;
-            width: $o-types-severities-width;
+            width: calc(100% - #{$types-data-element-image-container-width} - #{$margin-between-types-data-image-and-text});
+            width: -webkit-calc(100% - #{$types-data-element-image-container-width} - #{$margin-between-types-data-image-and-text});
+            width: -moz-calc(100% - #{$types-data-element-image-container-width} - #{$margin-between-types-data-image-and-text});
+            width: -o-calc(100% - #{$types-data-element-image-container-width} - #{$margin-between-types-data-image-and-text});
             height: 100%;
             position: relative;
             float: left;
@@ -134,8 +134,8 @@
               font-size: $attacks-dashboard-number-text-size;
               @media only screen and(max-width: 767px) {
                 font-size: $attacks-dashboard-number-mobile-text-size;
-                @media only screen and (orientation: landscape) {
-                  font-size: $attacks-dashboard-number-mobile-landscape-text-size;
+                @media only screen and(orientation: landscape){
+                  top: -5px;
                 }
               }
             }
@@ -156,11 +156,8 @@
                 bottom: -webkit-calc(#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding});
                 bottom: -moz-calc(#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding});
                 bottom: -o-calc(#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding});
-                @media only screen and (orientation: landscape){
-                  bottom: calc(#{$attacks-dashboard-mobile-landscape-text-size} + #{$div-text-mobile-landscape-automatic-padding});
-                  bottom: -webkit-calc(#{$attacks-dashboard-mobile-landscape-text-size} + #{$div-text-mobile-landscape-automatic-padding});
-                  bottom: -moz-calc(#{$attacks-dashboard-mobile-landscape-text-size} + #{$div-text-mobile-landscape-automatic-padding});
-                  bottom: -o-calc(#{$attacks-dashboard-mobile-landscape-text-size} + #{$div-text-mobile-landscape-automatic-padding});
+                @media only screen and (orientation: landscape) {
+                  bottom: 0;
                 }
               }
             }
@@ -176,7 +173,7 @@
     width: $moz-types-severities-width;
     width: $o-types-severities-width;
     position: absolute;
-    left: 45%;//safari doesnt support calc inside calc
+    left: 45%; //safari doesnt support calc inside calc
     left: calc((#{$web-header-width} + #{$types-severities-width} + 4 * #{$data-presentation-padding}));
     left: -webkit-calc((#{$web-header-width} + #{$webkit-types-severities-width} + 4 * #{$data-presentation-padding}));
     left: -moz-calc((#{$web-header-width} + #{$moz-types-severities-width} + 4 * #{$data-presentation-padding}));
@@ -193,12 +190,6 @@
         height: -webkit-calc(100% - (#{$data-content-padding-inside-box} * 3) - ((#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding}) * 2));
         height: -moz-calc(100% - (#{$data-content-padding-inside-box} * 3) - ((#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding}) * 2));
         height: -o-calc(100% - (#{$data-content-padding-inside-box} * 3) - ((#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding}) * 2));
-        @media only screen and (orientation: landscape){
-          height: calc(100% - (#{$data-content-padding-inside-box} * 3) - ((#{$attacks-dashboard-mobile-landscape-text-size} + #{$div-text-mobile-landscape-automatic-padding}) * 2));
-          height: -webkit-calc(100% - (#{$data-content-padding-inside-box} * 3) - ((#{$attacks-dashboard-mobile-landscape-text-size} + #{$div-text-mobile-landscape-automatic-padding}) * 2));
-          height: -moz-calc(100% - (#{$data-content-padding-inside-box} * 3) - ((#{$attacks-dashboard-mobile-landscape-text-size} + #{$div-text-mobile-landscape-automatic-padding}) * 2));
-          height: -o-calc(100% - (#{$data-content-padding-inside-box} * 3) - ((#{$attacks-dashboard-mobile-landscape-text-size} + #{$div-text-mobile-landscape-automatic-padding}) * 2));
-        }
       }
       .severities-chart {
         width: 100%;
@@ -224,13 +215,7 @@
         height: calc(#{$data-content-padding-inside-box} * 3 + ((#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding}) * 2));
         height: -webkit-calc(#{$data-content-padding-inside-box} * 3 + ((#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding}) * 2));
         height: -webkit-calc(#{$data-content-padding-inside-box} * 3 + ((#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding}) * 2));
-        height: -webkit-calc(#{$data-content-padding-inside-box} * 3 + ((#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding}) * 2));
-        @media only screen and (orientaion: landscape){
-          height: calc(#{$data-content-padding-inside-box} * 3 + ((#{$attacks-dashboard-mobile-landscape-text-size} + #{$div-text-mobile-landscape-automatic-padding}) * 2));
-          height: -webkit-calc(#{$data-content-padding-inside-box} * 3 + ((#{$attacks-dashboard-mobile-landscape-text-size} + #{$div-text-mobile-landscape-automatic-padding}) * 2));
-          height: -webkit-calc(#{$data-content-padding-inside-box} * 3 + ((#{$attacks-dashboard-mobile-landscape-text-size} + #{$div-text-mobile-landscape-automatic-padding}) * 2));
-          height: -webkit-calc(#{$data-content-padding-inside-box} * 3 + ((#{$attacks-dashboard-mobile-landscape-text-size} + #{$div-text-mobile-landscape-automatic-padding}) * 2));
-        }
+        height: -webkit-calc(#{$data-content-padding-inside-box} * 3 + ((#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding}) * 2))
       }
       padding-left: $severities-side-padding;
       position: relative;
@@ -254,12 +239,6 @@
           height: -webkit-calc((#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding}) * 2);
           height: -moz-calc((#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding}) * 2);
           height: -o-calc((#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding}) * 2);
-          @media only screen and (orientaion: landscape){
-            height: calc((#{$attacks-dashboard-mobile-landscape-text-size} + #{$div-text-mobile-landscape-automatic-padding}) * 2);
-            height: -webkit-calc((#{$attacks-dashboard-mobile-landscape-text-size} + #{$div-text-mobile-landscape-automatic-padding}) * 2);
-            height: -moz-calc((#{$attacks-dashboard-mobile-landscape-text-size} + #{$div-text-mobile-landscape-automatic-padding}) * 2);
-            height: -o-calc((#{$attacks-dashboard-mobile-landscape-text-size} + #{$div-text-mobile-landscape-automatic-padding}) * 2);
-          }
         }
         .severities-elements-container {
           position: relative;
@@ -286,9 +265,6 @@
             font-size: $attacks-dashboard-number-text-size;
             @media only screen and(max-width: 767px) {
               font-size: $attacks-dashboard-number-mobile-text-size;
-              @media only screen and (orientation: landscape) {
-                font-size: $attacks-dashboard-number-mobile-landscape-text-size;
-              }
             }
           }
         }
@@ -299,7 +275,7 @@
     height: 100%;
     width: $sources-data-width;
     position: absolute;
-    left: 79%;//safari doesnt support calc inside calc
+    left: 79%; //safari doesnt support calc inside calc
     left: calc((#{$web-header-width} + 2 * #{$types-severities-width} + 6 * #{$data-presentation-padding}));
     left: -webkit-calc((#{$web-header-width} + 2 * #{$webkit-types-severities-width} + 6 * #{$data-presentation-padding}));
     left: -moz-calc((#{$web-header-width} + 2 * #{$moz-types-severities-width} + 6 * #{$data-presentation-padding}));
@@ -313,6 +289,7 @@
       width: 100%;
       .sources-data-row-container {
         height: 100%;
+
         .sources-data-row-header-container {
           height: 50%;
           width: 100%;
@@ -320,24 +297,21 @@
         .sources-data-row-bar-value-container {
           height: 50%;
           width: 100%;
-          @media screen and(max-width: 767px) {
-            width: 100%;
-          }
           position: relative;
           .sources-data-row-bar {
             height: 100%;
             width: 90%;
-            position: absolute;
-            left: 0;
-            top: 0;
-            .ct-series {
-              stroke-linecap: $round-the-bar-chart;
+            @media only screen and(max-width: 767px) and (orientation: landscape){
+              top: -5px;
+              left: -3px;
             }
           }
           .sources-data-row-value {
             position: absolute;
-            right: $sources-data-row-mobile-seperate-text-and-value;
-            top: 0;
+            right: $sources-data-row-seperate-text-and-value;
+            @media only screen and(max-width: 767px) and (orientation: landscape){
+              top: 0;
+            }
           }
         }
       }
@@ -357,7 +331,7 @@
     }
     .attacks-dashboard-header-text {
       font-size: 14px;
-      @media screen and (max-width: 767px){
+      @media screen and (max-width: 767px) {
         font-size: 8px;
       }
     }

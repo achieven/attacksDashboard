@@ -31,7 +31,7 @@ $severities-chart-low-color: #41AFD5;
 
 $sources-data-width: 20%;
 $sources-data-row-left-element-width: 90%;
-$sources-data-row-mobile-seperate-text-and-value: -5px;
+$sources-data-row-seperate-text-and-value: -5px;
 $sources-data-row-bar-seperate-from-text: 20%;
 $round-the-bar-chart: round;
 
@@ -40,11 +40,8 @@ $attacks-dashboard-text-size: 9px;
 $attacks-dashboard-mobile-text-size: 5px;
 $div-text-automatic-padding: 4px;
 $div-text-mobile-automatic-padding: 1px;
-$attacks-dashboard-mobile-landscape-text-size: 3px;
-$div-text-mobile-landscape-automatic-padding: 1px;
 $attacks-dashboard-number-text-size: 11px;
 $attacks-dashboard-number-mobile-text-size: 7px;
-$attacks-dashboard-number-mobile-landscape-text-size: 5px;
 
 $types-severities-width: calc(((100% - #{$web-header-width} - #{$sources-data-width} - (#{$data-presentation-padding} * 8)) / 2));
 $webkit-types-severities-width: -webkit-calc(((100% - #{$web-header-width} - #{$sources-data-width} - (#{$data-presentation-padding} * 8)) / 2));
