@@ -306,7 +306,10 @@
     left: -o-calc((#{$web-header-width} + 2 * #{$o-types-severities-width} + 6 * #{$data-presentation-padding}));
     top: 0;
     .data-box-content-sources {
-      height: 20%;
+      height: calc((100% - #{$data-content-padding-inside-box}) / 5);
+      height: -webkit-calc((100% - #{$data-content-padding-inside-box}) / 5);
+      height: -moz-calc((100% - #{$data-content-padding-inside-box}) / 5);
+      height: -o-calc((100% - #{$data-content-padding-inside-box}) / 5);
       width: 100%;
       .sources-data-row-container {
         height: 100%;
