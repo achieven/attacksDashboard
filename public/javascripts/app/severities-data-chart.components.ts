@@ -51,7 +51,7 @@ export class SeveritiesDataChartComponent {
                                 dur: 1000,
                                 from: -pathLength + 'px',
                                 to: '0px',
-                                begin: '',
+                                begin: undefined,
                                 easing: Chartist.Svg.Easing.easeOutQuint,
                                 fill: 'freeze'
                             }
