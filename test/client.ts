@@ -4,7 +4,7 @@ import {inject} from  "@angular/core/testing";
 var chai = require('chai');
 var assert = chai.assert;
 var expect = chai.expect;
-import {Util} from '../public/javascripts/util/util'
+import {Util} from '../client/javascripts/util/util'
 
 describe('normalizeValues', function () {
     it('should round number to it\'s closest integer, create rowNumber, and seperate header to capital letters and capitalize it', function(){

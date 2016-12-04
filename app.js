@@ -4,13 +4,12 @@ var routes = require('./server/routes/index');
 const cookieParser = require('cookie-parser')
 var app = express();
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'client')));
 app.use('/templates', express.static(__dirname + '/views/templates/'))
 app.use('/scripts', express.static(__dirname + '/node_modules/'));
-app.use('/css', express.static(__dirname + '/public/stylesheets/'))
-
-app.use('/images', express.static(__dirname + '/public/assets/images/'))
-app.use('/fonts', express.static(__dirname + '/public/assets/fonts/'))
+app.use('/css', express.static(__dirname + '/client/stylesheets/'))
+app.use('/images', express.static(__dirname + '/client/assets/images/'))
+app.use('/fonts', express.static(__dirname + '/client/assets/fonts/'))
 app.use(cookieParser())
 app.use('/', routes);
 
