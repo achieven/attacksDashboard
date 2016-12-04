@@ -4,6 +4,11 @@ var routes = require('./server/routes/index');
 const cookieParser = require('cookie-parser')
 var app = express();
 
+const port = process.env.PORT || 3000
+app.listen(port, function(){
+  console.log('listening on port ' + port)
+})
+
 app.use(express.static(path.join(__dirname, 'client')));
 app.use('/templates', express.static(__dirname + '/client/templates/'))
 app.use('/scripts', express.static(__dirname + '/node_modules/'));
@@ -13,10 +18,5 @@ app.use('/fonts', express.static(__dirname + '/client/assets/fonts/'))
 app.use(cookieParser())
 app.use('/', routes);
 
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});
 
 module.exports = app;

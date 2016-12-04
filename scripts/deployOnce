@@ -1,2 +1,2 @@
 npm i 
-node ./bin/www
+npm start
