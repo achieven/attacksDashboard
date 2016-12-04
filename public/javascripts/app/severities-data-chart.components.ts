@@ -1,7 +1,6 @@
 import {Input, Component} from 'angular2/core';
 import {Util} from '../util/util.js';
 
-///<reference path="../../../node_modules/angular2/typings/browser.d.ts"/> 
 
 @Component({
     selector: 'severities-data-chart',

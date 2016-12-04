@@ -7,7 +7,7 @@ import {Input, Component} from 'angular2/core';
 
 export class SourcesDataRowComponent {
     header:string = '';
-    value:string = '';
+    value:number = 0;
     chartId:string = '';
 
 
