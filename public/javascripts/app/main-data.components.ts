@@ -25,7 +25,7 @@ export class MainDataComponent {
                     severitiesData: data.ClearWeb.Severities,
                     sourcesData: data.ClearWeb.Sources,
                     outerRowNumber: 1,
-                    headerImage: 'images/clearWeb.png'
+                    headerImage: 'images/transparent-clear-web.png'
                 }
                 thisComponent.darkWeb = {
                     header: 'DARK WEB',
@@ -33,7 +33,7 @@ export class MainDataComponent {
                     severitiesData: data.DarkWeb.Severities,
                     sourcesData: data.DarkWeb.Sources,
                     outerRowNumber: 2,
-                    headerImage: 'images/darkWeb.png'
+                    headerImage: 'images/transparent-dark-web.png'
                 }
             }
         })

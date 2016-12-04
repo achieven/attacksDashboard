@@ -24,6 +24,7 @@ $image-circle-height: 70%;
 $types-data-image-size: 40%;
 $types-data-element-data-words-position: 10px;
 
+$severities-side-padding: 5%;
 
 $sources-data-width: 20%;
 $sources-data-row-left-element-width: 90%;
@@ -34,12 +35,16 @@ $round-the-bar-chart: round;
 
 
 $attacks-dashboard-text-color: white;
-$attacks-dashboard-text-size: 11px;
+$attacks-dashboard-text-size: 9px;
 $attacks-dashboard-mobile-text-size: 5px;
 $div-text-automatic-padding: 4px;
 $div-text-mobile-automatic-padding: 1px;
 $attacks-dashboard-mobile-landscape-text-size: 3px;
 $div-text-mobile-landscape-automatic-padding: 1px;
+$attacks-dashboard-number-text-size: 11px;
+$attacks-dashboard-number-mobile-text-size: 7px;
+$attacks-dashboard-number-mobile-landscape-text-size: 5px;
+
 
 
 $types-severities-width: calc(((100% - #{$web-header-width} - #{$sources-data-width} - (#{$data-presentation-padding} * 8)) / 2));

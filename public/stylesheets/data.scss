@@ -131,6 +131,13 @@
             .types-data-element-data-number {
               position: absolute;
               left: 0;
+              font-size: $attacks-dashboard-number-text-size;
+              @media only screen and(max-width: 767px) {
+                font-size: $attacks-dashboard-number-mobile-text-size;
+                @media only screen and (orientation: landscape) {
+                  font-size: $attacks-dashboard-number-mobile-landscape-text-size;
+                }
+              }
             }
             .types-data-element-data-words {
               position: absolute;
@@ -216,9 +223,12 @@
           height: -webkit-calc(#{$data-content-padding-inside-box} * 3 + ((#{$attacks-dashboard-mobile-landscape-text-size} + #{$div-text-mobile-landscape-automatic-padding}) * 2));
         }
       }
-      padding-left: $data-content-padding-inside-box;
+      padding-left: $severities-side-padding;
       position: relative;
-      width: calc(100% - (#{$data-content-padding-inside-box} * 3));
+      width: calc(100% - (#{$severities-side-padding} * 3));
+      width: calc(100% - (#{$severities-side-padding} * 3));
+      width: calc(100% - (#{$severities-side-padding} * 3));
+      width: calc(100% - (#{$severities-side-padding} * 3));
       .severities-data-row {
         position: absolute;
         width: 100%;
@@ -251,6 +261,15 @@
           .severities-data-element-container-low {
             position: absolute;
             right: 0;
+          }
+          .severities-number-text {
+            font-size: $attacks-dashboard-number-text-size;
+            @media only screen and(max-width: 767px) {
+              font-size: $attacks-dashboard-number-mobile-text-size;
+              @media only screen and (orientation: landscape) {
+                font-size: $attacks-dashboard-number-mobile-landscape-text-size;
+              }
+            }
           }
         }
       }
