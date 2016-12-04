@@ -3,7 +3,6 @@ import {Injectable} from "angular2/core";
 export class Util {
     static isEdgeOrExplorer() {
         var browserName = new UAParser().getBrowser().name
-        console.log(browserName)
         if (browserName === 'IE' || browserName === 'Edge'){
             return true
         }
