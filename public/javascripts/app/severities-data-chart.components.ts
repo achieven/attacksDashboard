@@ -1,19 +1,25 @@
 import {Input, Component} from 'angular2/core';
 import {Util} from '../util/util.js';
 
+///<reference path="../../../node_modules/angular2/typings/browser.d.ts"/> 
+
 @Component({
     selector: 'severities-data-chart',
     templateUrl: 'templates/severities-data-chart.html'
 })
 
 export class SeveritiesDataChartComponent {
-    chartId:string = '';
-    data:Object = {};
+    chartId: string = '';
+    high: number = 0;
+    medium: number = 0;
+    low: number = 0;
 
     @Input() set _data(_data:any) {
         if (_data) {
             this.chartId = 'chart' + _data.outerRowNumber
-            this.data = _data;
+            this.high = _data.High
+            this.medium = _data.Medium
+            this.low = _data.Low
         }
     }
 
@@ -22,7 +28,7 @@ export class SeveritiesDataChartComponent {
         var labelCounter = 0
         var slicesDrawn = 0
         new Chartist.Pie(chartSelector, {
-            series: [this.data.High, this.data.Medium, this.data.Low]
+            series: [this.high, this.medium, this.low]
         }, {
             donut: true,
             donutWidth: '15%',
@@ -45,6 +51,7 @@ export class SeveritiesDataChartComponent {
                                 dur: 1000,
                                 from: -pathLength + 'px',
                                 to: '0px',
+                                begin: '',
                                 easing: Chartist.Svg.Easing.easeOutQuint,
                                 fill: 'freeze'
                             }
