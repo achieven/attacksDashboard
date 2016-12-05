@@ -1,7 +1,9 @@
 import {Injectable} from "angular2/core";
 @Injectable()
 export class Util {
-    static browserName = new UAParser().getBrowser().name
+    static initBrowserName(){
+        this.browserName = new UAParser().getBrowser().name
+    }
     
     static isExplorer() {
         if (this.browserName === 'IE'){
