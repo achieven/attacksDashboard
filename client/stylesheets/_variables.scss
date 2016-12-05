@@ -19,7 +19,7 @@ $types-data-row-padding-from-hr: 5px;
 $types-data-element-image-container-width: 20%;
 $margin-between-types-data-image-and-text: 5%;
 $image-circle-height: 70%;
-$circle-stroke-width: 5px;
+$circle-stroke-width: 5%;// need to be coordinated with types-data-element.components.ts, see that circle_stroke_radius is also the same
 
 $severities-side-padding: 5%;
 $severities-chart-high-color: #F05B4F;

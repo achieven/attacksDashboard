@@ -30,11 +30,13 @@ export class TypesDataElementComponent {
     }
 
     ngAfterViewInit(){ 
-        var isFirefoxOrEdge = Util.isFirefox() || Util.isEdge() 
+        var isFirefoxOrEdge = Util.isFirefox() || Util.isEdge() || Util.isExplorer()
         if(isFirefoxOrEdge){
+            var circle_stroke_width = 5// cross browser radius - check with $circle-stroke-width to see if the same
+            var radius = (100 - 2 * circle_stroke_width) / 2 + '%'
             $('.image-circle').attr('cx' ,'50%')
             $('.image-circle').attr('cy' ,'50%')
-            $('.image-circle').attr('r' ,'40%')
+            $('.image-circle').attr('r' ,radius)
         }
     }
 }
