@@ -1,15 +1,20 @@
 import {Injectable} from "angular2/core";
 @Injectable()
 export class Util {
-    static isEdgeOrExplorer() {
-        var browserName = new UAParser().getBrowser().name
-        if (browserName === 'IE' || browserName === 'Edge'){
+    static browserName = new UAParser().getBrowser().name
+    
+    static isExplorer() {
+        if (this.browserName === 'IE'){
+            return true
+        }
+    }
+    static isEdge(){
+        if (this.browserName === 'Edge'){
             return true
         }
     }
     static isFirefox(){
-        var browserName = new UAParser().getBrowser().name
-        if (browserName === 'Firefox'){
+        if (this.browserName === 'Firefox'){
             return true
         }
     }

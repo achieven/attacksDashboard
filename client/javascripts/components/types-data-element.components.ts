@@ -29,8 +29,9 @@ export class TypesDataElementComponent {
         }
     }
 
-    ngAfterViewInit(){
-        if(Util.isFirefox()){
+    ngAfterViewInit(){ 
+        var isFirefoxOrEdge = Util.isFirefox() || Util.isEdge() 
+        if(isFirefoxOrEdge){
             $('.image-circle').attr('cx' ,'50%')
             $('.image-circle').attr('cy' ,'50%')
             $('.image-circle').attr('r' ,'40%')
