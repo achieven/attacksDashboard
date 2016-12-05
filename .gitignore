@@ -4,7 +4,7 @@ attacksDashboard
 client/javascripts/util/*.js*
 client/javascripts/components/*.js*
 client/javascripts/*.js*
-test/*.js*
+test/*client.js*
 client/stylesheets/*.css
 
 .idea

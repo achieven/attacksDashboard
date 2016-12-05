@@ -34,7 +34,7 @@ export class SeveritiesDataChartComponent {
             showLabel: false
 
         }).on('draw', function (data) {
-            var isEdgeOrExplorer = Util.isEdgeOrExplorer()
+            var isEdgeOrExplorer = Util.isEdge() || Util.isExplorer()
             if(!isEdgeOrExplorer) {
                 if (data.type === 'slice' && slicesDrawn < 3) {
                     var animateDonutPie = function () {

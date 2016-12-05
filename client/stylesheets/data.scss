@@ -91,7 +91,7 @@
           height: 100%;
           float: left;
           .types-data-element-image-container {
-            @media screen and (max-width: 768px) {
+            @media screen and (max-width: 991px) {
               display: none;
             }
             width: $types-data-element-image-container-width;
@@ -105,18 +105,24 @@
               .image-circle-container {
                 height: 100%;
                 width: 100%;
-                position: absolute;
-                left: 0;
-                top: 0;
                 .image-circle {
                   stroke: white;
                   fill: $data-content-container-color;
-                  stroke-width: 2;
+                  stroke-width: $circle-stroke-width;
+                  cx: 50%;
+                  cy: 50%;
+                  r: calc((100% - 2 *#{$circle-stroke-width}) / 2);
+                  r: -webkit-calc((100% - 2 *#{$circle-stroke-width}) / 2);
+                  r: -moz-calc((100% - 2 *#{$circle-stroke-width}) / 2);
+                  r: -o-calc((100% - 2 *#{$circle-stroke-width}) / 2);
                 }
               }
               .types-data-image {
-                width: $types-data-image-size;
-                height: $types-data-image-size;
+                width: calc((100% - 2 *#{$circle-stroke-width}) / 2);
+                width: -webkit-calc((100% - 2 *#{$circle-stroke-width}) / 2);
+                width: -moz-calc((100% - 2 *#{$circle-stroke-width}) / 2);
+                width: -o-calc((100% - 2 *#{$circle-stroke-width}) / 2);
+                height: auto;
               }
             }
           }
@@ -134,7 +140,7 @@
               font-size: $attacks-dashboard-number-text-size;
               @media only screen and(max-width: 767px) {
                 font-size: $attacks-dashboard-number-mobile-text-size;
-                @media only screen and(orientation: landscape){
+                @media only screen and(orientation: landscape) {
                   top: -7px;
                 }
               }
@@ -301,14 +307,14 @@
           .sources-data-row-bar {
             height: 100%;
             width: 90%;
-            @media only screen and(max-width: 767px) and (orientation: landscape){
+            @media only screen and(max-width: 767px) and (orientation: landscape) {
               top: -5px;
             }
           }
           .sources-data-row-value {
             position: absolute;
             right: $sources-data-row-seperate-text-and-value;
-            @media only screen and(max-width: 767px) and (orientation: landscape){
+            @media only screen and(max-width: 767px) and (orientation: landscape) {
               top: 0;
             }
           }
