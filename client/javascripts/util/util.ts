@@ -7,6 +7,12 @@ export class Util {
             return true
         }
     }
+    static isFirefox(){
+        var browserName = new UAParser().getBrowser().name
+        if (browserName === 'Firefox'){
+            return true
+        }
+    }
 
     static seperateToCapitalLetters(str){
         var capitalLetterRegex = /([A-Z]?[^A-Z]*)/g
