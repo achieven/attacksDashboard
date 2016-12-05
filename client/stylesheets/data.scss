@@ -91,8 +91,8 @@
           height: 100%;
           float: left;
           .types-data-element-image-container {
-            @media screen and (max-width: 768px) {
-              display: none;
+            @media screen and (max-width: 767px) {
+             // display: none;
             }
             width: $types-data-element-image-container-width;
             height: 100%;
@@ -105,18 +105,18 @@
               .image-circle-container {
                 height: 100%;
                 width: 100%;
-                position: absolute;
-                left: 0;
-                top: 0;
                 .image-circle {
                   stroke: white;
                   fill: $data-content-container-color;
-                  stroke-width: 2;
+                  stroke-width: 5px;
+                  cx: 50%;
+                  cy:50%;
+                  r:40%;
                 }
               }
               .types-data-image {
-                width: $types-data-image-size;
-                height: $types-data-image-size;
+                width: 40%;
+                height: auto;
               }
             }
           }
