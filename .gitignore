@@ -1,13 +1,11 @@
 node_modules
-public/javascripts/compiled
 attacksDashboard
 
-*.components.js
-*.components.js.map
-public/javascripts/util/*.js*
-public/javascripts/app/*.js*
+client/javascripts/util/*.js*
+client/javascripts/components/*.js*
+client/javascripts/*.js*
 test/*.js*
-public/stylesheets/*.css
+client/stylesheets/*.css
 
 .idea
 npm-debug.log

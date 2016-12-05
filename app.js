@@ -4,20 +4,19 @@ var routes = require('./server/routes/index');
 const cookieParser = require('cookie-parser')
 var app = express();
 
-app.use(express.static(path.join(__dirname, 'public')));
-app.use('/templates', express.static(__dirname + '/views/templates/'))
-app.use('/scripts', express.static(__dirname + '/node_modules/'));
-app.use('/css', express.static(__dirname + '/public/stylesheets/'))
+const port = process.env.PORT || 3000
+app.listen(port, function(){
+  console.log('listening on port ' + port)
+})
 
-app.use('/images', express.static(__dirname + '/public/assets/images/'))
-app.use('/fonts', express.static(__dirname + '/public/assets/fonts/'))
+app.use(express.static(path.join(__dirname, 'client')));
+app.use('/templates', express.static(__dirname + '/client/templates/'))
+app.use('/scripts', express.static(__dirname + '/node_modules/'));
+app.use('/css', express.static(__dirname + '/client/stylesheets/'))
+app.use('/images', express.static(__dirname + '/client/assets/images/'))
+app.use('/fonts', express.static(__dirname + '/client/assets/fonts/'))
 app.use(cookieParser())
 app.use('/', routes);
 
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});
 
 module.exports = app;

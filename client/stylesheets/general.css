@@ -1,0 +1,35 @@
+.attacks-dashboard-text {
+  color: white;
+  font-size: 9px;
+  font-family: 'Open Sans', sans-serif; }
+  @media only screen and (max-width: 767px) {
+    .attacks-dashboard-text {
+      font-size: 5px; } }
+  @media only screen and (max-width: 767px) and (orientation: landscape) {
+    .attacks-dashboard-text {
+      font-size: 4px; } }
+
+.centralize-element-horizontally-vertically {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%); }
+
+.centralize-element-vertically {
+  position: absolute;
+  top: 50%;
+  transform: translate(0%, -50%);
+  -webkit-transform: translate(0%, -50%);
+  -moz-transform: translate(0%, -50%);
+  -o-transform: translate(0%, -50%); }
+
+.centralize-element-horizontally {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  -webkit-transform: translate(-50%, 0%);
+  -moz-transform: translate(-50%, 0%);
+  -o-transform: translate(-50%, 0%); }

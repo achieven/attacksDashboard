@@ -11,22 +11,22 @@ gulp.task('default', ['compile', 'build-css', 'watch'], function() {
 
 gulp.task('compile', function(){
     return gulp
-        .src('public/javascripts/**/*.ts')
+        .src('client/javascripts/**/*.ts')
         .pipe(typescript(tscConfig.compilerOptions))
-        .pipe(gulp.dest('public/javascripts'));
+        .pipe(gulp.dest('client/javascripts'));
 })
 
 gulp.task('build-css', function() {
-    return gulp.src('public/stylesheets/**/*.scss')
+    return gulp.src('client/stylesheets/**/*.scss')
         .pipe(sass())
-        .pipe(gulp.dest('public//stylesheets'));
+        .pipe(gulp.dest('client//stylesheets'));
 });
 
 gulp.task('watch', function () {
-    gulp.watch(["public/javascripts/**/*.ts"], ['compile']).on('change', function (e) {
+    gulp.watch(["client/javascripts/**/*.ts"], ['compile']).on('change', function (e) {
         console.log('TypeScript file ' + e.path + ' has been changed. Compiling.');
     });
-    gulp.watch(["public/stylesheets/**/*.scss"], ["build-css"]).on('change', function (e) {
+    gulp.watch(["client/stylesheets/**/*.scss"], ["build-css"]).on('change', function (e) {
         console.log('Resource file ' + e.path + ' has been changed. Updating.');
     });
 });

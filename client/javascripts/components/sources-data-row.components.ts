@@ -7,7 +7,7 @@ import {Input, Component} from 'angular2/core';
 
 export class SourcesDataRowComponent {
     header:string = '';
-    value:string = '';
+    value:number = 0;
     chartId:string = '';
 
 
@@ -21,8 +21,7 @@ export class SourcesDataRowComponent {
     ngAfterViewInit() {
         var thisComponent = this
         var chartSelector = '#' + this.chartId
-
-        function renderChart() {
+        function renderBarChart() {
             var chartWidth = $(chartSelector).width(), chartHeight = $(chartSelector).height()
             var roundingBarOffset = 3
             var leftBarX1 = roundingBarOffset
@@ -32,16 +31,15 @@ export class SourcesDataRowComponent {
             var bothBarsY = chartHeight / 2
             var brightStroke = '#1D384B', darkStroke = '#8AB4D4'  
 
-            var chartSvg = '<svg class="ct-chart-bar ct-horizontal-bars" height="100%" width="100%">' +
-                '<g class="ct-series ct-series-b"> <line class="ct-bar" style="stroke: ' + brightStroke + '; stroke-width: 5px;" x1="' + rightBarX1 + '" x2="' + rightBarX2 + '" y1="' + bothBarsY + '" y2="' + bothBarsY + '"></line>' +
-                '<g class="ct-series ct-series-a"> <line class="ct-bar" style="stroke: ' + darkStroke + '; stroke-width: 5px" x1="' + leftBarX1 + '" x2="' + leftBarX2 + '" y1="' + bothBarsY + '" y2="' + bothBarsY + '"></line>' +
+            var chartSvg = '<svg height="100%" width="100%">' +
+                '<g> <line class="bar-chart-element" style="stroke: ' + brightStroke + '; stroke-width: 5%; stroke-linecap: round;" x1="' + rightBarX1 + '" x2="' + rightBarX2 + '" y1="' + bothBarsY + '" y2="' + bothBarsY + '"></line>' +
+                '<g> <line class="bar-chart-element" style="stroke: ' + darkStroke + '; stroke-width: 5%; stroke-linecap: round;" x1="' + leftBarX1 + '" x2="' + leftBarX2 + '" y1="' + bothBarsY + '" y2="' + bothBarsY + '"></line>' +
                 '</svg>'
             $(chartSelector).html(chartSvg)
         }
 
-        renderChart()
-        $(window).resize(function () {
-            renderChart()
-        })
+        renderBarChart()
+        $(window).resize(_.debounce(renderBarChart, 500))
+            
     }
 }

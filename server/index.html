@@ -11,12 +11,14 @@
     <script src="scripts/angular2/bundles/angular2.dev.js"></script>
     <script src="scripts/jquery/dist/jquery.min.js"></script>
     <script src="scripts/ua-parser-js/dist/ua-parser.min.js"></script>
+    <script src="scripts/lodash/lodash.js"></script>
     <script src="scripts/chartist/dist/chartist.min.js"></script>
     <link rel="stylesheet" href="scripts/chartist/dist/chartist.css">
     <link href="fonts/font-open-sans.css" rel="stylesheet">
 
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/data.css">
+    <link rel="stylesheet" href="css/general.css">
     <script>
         System.config({
             packages: {
@@ -26,7 +28,7 @@
                 }
             }
         });
-        System.import('javascripts/app/main.js')
+        System.import('javascripts/main.js')
                 .then(null, console.error.bind(console));
     </script>
 </head>

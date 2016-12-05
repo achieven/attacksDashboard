@@ -6,7 +6,7 @@ const fs = require('fs')
 
 
 router.get('/', function (req, res, next) {
-    var html = fs.readFileSync('views/index.html', 'utf8')
+    var html = fs.readFileSync('server/index.html', 'utf8')
     var authorized = util.getToken(req.cookies)
     if (authorized) {
         res.send(html)

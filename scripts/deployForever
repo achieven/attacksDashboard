@@ -1,2 +1,2 @@
 npm i
-forever start ./bin/www
+forever start app.js

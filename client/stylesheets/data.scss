@@ -2,10 +2,16 @@
 
 .data-row {
   width: 100%;
-  height: calc((100% - #{$margin-between-main-header-and-data} - #{$margin-between-data-rows}) / 2);
-  height: -webkit-calc((100% - #{$margin-between-main-header-and-data} - #{$margin-between-data-rows}) / 2);
-  height: -moz-calc((100% - #{$margin-between-main-header-and-data} - #{$margin-between-data-rows}) / 2);
-  height: -o-calc((100% - #{$margin-between-main-header-and-data} - #{$margin-between-data-rows}) / 2);
+  height: calc((100% - #{$laptop-tablet-main-header-height} - #{$margin-between-data-rows}) / 2);
+  height: -webkit-calc((100% - #{$laptop-tablet-main-header-height} - #{$margin-between-data-rows}) / 2);
+  height: -moz-calc((100% - #{$laptop-tablet-main-header-height} - #{$margin-between-data-rows}) / 2);
+  height: -o-calc((100% - #{$laptop-tablet-main-header-height} - #{$margin-between-data-rows}) / 2);
+  @media only screen and (max-width: 767px) {
+    height: calc((100% - #{$mobile-main-header-height} - #{$margin-between-data-rows}) / 2);
+    height: -webkit-calc((100% - #{$mobile-main-header-height} - #{$margin-between-data-rows}) / 2);
+    height: -moz-calc((100% - #{$mobile-main-header-height} - #{$margin-between-data-rows}) / 2);
+    height: -o-calc((100% - #{$mobile-main-header-height} - #{$margin-between-data-rows}) / 2);
+  }
   margin-bottom: $margin-between-data-rows;
   position: relative;
   .data-presentation {
@@ -29,7 +35,7 @@
           width: 100%;
           text-align: center;
           @media screen and (max-width: 767px) {
-            font-size: 10px;
+            font-size: 9px;
           }
         }
       }
@@ -86,7 +92,7 @@
           float: left;
           .types-data-element-image-container {
             @media screen and (max-width: 768px) {
-                display: none;
+              display: none;
             }
             width: $types-data-element-image-container-width;
             height: 100%;
@@ -115,16 +121,23 @@
             }
           }
           .types-data-element-data-container {
-            width: $types-severities-width;
-            width: $webkit-types-severities-width;
-            width: $moz-types-severities-width;
-            width: $o-types-severities-width;
+            width: calc(100% - #{$types-data-element-image-container-width} - #{$margin-between-types-data-image-and-text});
+            width: -webkit-calc(100% - #{$types-data-element-image-container-width} - #{$margin-between-types-data-image-and-text});
+            width: -moz-calc(100% - #{$types-data-element-image-container-width} - #{$margin-between-types-data-image-and-text});
+            width: -o-calc(100% - #{$types-data-element-image-container-width} - #{$margin-between-types-data-image-and-text});
             height: 100%;
             position: relative;
             float: left;
             .types-data-element-data-number {
               position: absolute;
               left: 0;
+              font-size: $attacks-dashboard-number-text-size;
+              @media only screen and(max-width: 767px) {
+                font-size: $attacks-dashboard-number-mobile-text-size;
+                @media only screen and(orientation: landscape){
+                  top: -7px;
+                }
+              }
             }
             .types-data-element-data-words {
               position: absolute;
@@ -138,11 +151,14 @@
               bottom: -moz-calc(#{$attacks-dashboard-text-size} + #{$div-text-automatic-padding});
               bottom: -o-calc(#{$attacks-dashboard-text-size} + #{$div-text-automatic-padding});
               left: 0;
-              @media screen and (max-width: 767px) {
+              @media only screen and (max-width: 767px) {
                 bottom: calc(#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding});
                 bottom: -webkit-calc(#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding});
                 bottom: -moz-calc(#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding});
                 bottom: -o-calc(#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding});
+                @media only screen and (orientation: landscape) {
+                  bottom: 0;
+                }
               }
             }
           }
@@ -157,26 +173,56 @@
     width: $moz-types-severities-width;
     width: $o-types-severities-width;
     position: absolute;
-    left: 45%;//safari doesnt support calc inside calc
+    left: 45%; //safari doesnt support calc inside calc
     left: calc((#{$web-header-width} + #{$types-severities-width} + 4 * #{$data-presentation-padding}));
     left: -webkit-calc((#{$web-header-width} + #{$webkit-types-severities-width} + 4 * #{$data-presentation-padding}));
     left: -moz-calc((#{$web-header-width} + #{$moz-types-severities-width} + 4 * #{$data-presentation-padding}));
     left: -o-calc((#{$web-header-width} + #{$o-types-severities-width} + 4 * #{$data-presentation-padding}));
+    .severities-chart-container {
+      width: 100%;
+      height: calc(100% - (#{$data-content-padding-inside-box} * 3) - ((#{$attacks-dashboard-text-size} + #{$div-text-automatic-padding}) * 2));
+      height: -webkit-calc(100% - (#{$data-content-padding-inside-box} * 3) - ((#{$attacks-dashboard-text-size} + #{$div-text-automatic-padding}) * 2));
+      height: -moz-calc(100% - (#{$data-content-padding-inside-box} * 3) - ((#{$attacks-dashboard-text-size} + #{$div-text-automatic-padding}) * 2));
+      height: -o-calc(100% - (#{$data-content-padding-inside-box} * 3) - ((#{$attacks-dashboard-text-size} + #{$div-text-automatic-padding}) * 2));
+      position: relative;
+      @media only screen and (max-width: 767px) {
+        height: calc(100% - (#{$data-content-padding-inside-box} * 3) - ((#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding}) * 2));
+        height: -webkit-calc(100% - (#{$data-content-padding-inside-box} * 3) - ((#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding}) * 2));
+        height: -moz-calc(100% - (#{$data-content-padding-inside-box} * 3) - ((#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding}) * 2));
+        height: -o-calc(100% - (#{$data-content-padding-inside-box} * 3) - ((#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding}) * 2));
+      }
+      .severities-chart {
+        width: 100%;
+        height: 100%;
+        .ct-series-a path {
+          stroke: $severities-chart-high-color;
+        }
+        .ct-series-b path {
+          stroke: $severities-chart-medium-color;
+        }
+        .ct-series-c path {
+          stroke: $severities-chart-low-color;
+        }
+      }
+    }
     .severities-data-row-container {
       height: auto;
       height: calc(#{$data-content-padding-inside-box} * 3 + ((#{$attacks-dashboard-text-size} + #{$div-text-automatic-padding}) * 2));
       height: -webkit-calc(#{$data-content-padding-inside-box} * 3 + ((#{$attacks-dashboard-text-size} + #{$div-text-automatic-padding}) * 2));
       height: -webkit-calc(#{$data-content-padding-inside-box} * 3 + ((#{$attacks-dashboard-text-size} + #{$div-text-automatic-padding}) * 2));
       height: -webkit-calc(#{$data-content-padding-inside-box} * 3 + ((#{$attacks-dashboard-text-size} + #{$div-text-automatic-padding}) * 2));
-      @media screen and (max-width: 767px) {
+      @media only screen and (max-width: 767px) {
         height: calc(#{$data-content-padding-inside-box} * 3 + ((#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding}) * 2));
         height: -webkit-calc(#{$data-content-padding-inside-box} * 3 + ((#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding}) * 2));
         height: -webkit-calc(#{$data-content-padding-inside-box} * 3 + ((#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding}) * 2));
-        height: -webkit-calc(#{$data-content-padding-inside-box} * 3 + ((#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding}) * 2));
+        height: -webkit-calc(#{$data-content-padding-inside-box} * 3 + ((#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding}) * 2))
       }
-      padding-left: $data-content-padding-inside-box;
+      padding-left: $severities-side-padding;
       position: relative;
-      width: calc(100% - (#{$data-content-padding-inside-box} * 3));
+      width: calc(100% - (#{$severities-side-padding} * 3));
+      width: calc(100% - (#{$severities-side-padding} * 3));
+      width: calc(100% - (#{$severities-side-padding} * 3));
+      width: calc(100% - (#{$severities-side-padding} * 3));
       .severities-data-row {
         position: absolute;
         width: 100%;
@@ -188,7 +234,7 @@
         bottom: -webkit-calc(2 * #{$data-content-padding-inside-box});
         bottom: -moz-calc(2 * #{$data-content-padding-inside-box});
         bottom: -o-calc(2 * #{$data-content-padding-inside-box});
-        @media screen and (max-width: 767px) {
+        @media only screen and (max-width: 767px) {
           height: calc((#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding}) * 2);
           height: -webkit-calc((#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding}) * 2);
           height: -moz-calc((#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding}) * 2);
@@ -199,10 +245,27 @@
           .severities-data-element-container-high {
             position: absolute;
             left: 0;
+            .attacks-dashboard-text {
+              color: $severities-chart-high-color;
+            }
+          }
+          .severities-data-element-container-medium {
+            .attacks-dashboard-text {
+              color: $severities-chart-medium-color;
+            }
           }
           .severities-data-element-container-low {
             position: absolute;
             right: 0;
+            .attacks-dashboard-text {
+              color: $severities-chart-low-color;
+            }
+          }
+          .severities-number-text {
+            font-size: $attacks-dashboard-number-text-size;
+            @media only screen and(max-width: 767px) {
+              font-size: $attacks-dashboard-number-mobile-text-size;
+            }
           }
         }
       }
@@ -212,17 +275,21 @@
     height: 100%;
     width: $sources-data-width;
     position: absolute;
-    left: 79%;//safari doesnt support calc inside calc
+    left: 79%; //safari doesnt support calc inside calc
     left: calc((#{$web-header-width} + 2 * #{$types-severities-width} + 6 * #{$data-presentation-padding}));
     left: -webkit-calc((#{$web-header-width} + 2 * #{$webkit-types-severities-width} + 6 * #{$data-presentation-padding}));
     left: -moz-calc((#{$web-header-width} + 2 * #{$moz-types-severities-width} + 6 * #{$data-presentation-padding}));
     left: -o-calc((#{$web-header-width} + 2 * #{$o-types-severities-width} + 6 * #{$data-presentation-padding}));
     top: 0;
     .data-box-content-sources {
-      height: 20%;
+      height: calc((100% - #{$data-content-padding-inside-box}) / 5);
+      height: -webkit-calc((100% - #{$data-content-padding-inside-box}) / 5);
+      height: -moz-calc((100% - #{$data-content-padding-inside-box}) / 5);
+      height: -o-calc((100% - #{$data-content-padding-inside-box}) / 5);
       width: 100%;
       .sources-data-row-container {
         height: 100%;
+
         .sources-data-row-header-container {
           height: 50%;
           width: 100%;
@@ -230,24 +297,20 @@
         .sources-data-row-bar-value-container {
           height: 50%;
           width: 100%;
-          @media screen and(max-width: 767px) {
-            width: 100%;
-          }
           position: relative;
           .sources-data-row-bar {
             height: 100%;
             width: 90%;
-            position: absolute;
-            left: 0;
-            top: 0;
-            .ct-series {
-              stroke-linecap: $round-the-bar-chart;
+            @media only screen and(max-width: 767px) and (orientation: landscape){
+              top: -5px;
             }
           }
           .sources-data-row-value {
             position: absolute;
-            right: $sources-data-row-mobile-seperate-text-and-value;
-            top: 0;
+            right: $sources-data-row-seperate-text-and-value;
+            @media only screen and(max-width: 767px) and (orientation: landscape){
+              top: 0;
+            }
           }
         }
       }
@@ -267,7 +330,7 @@
     }
     .attacks-dashboard-header-text {
       font-size: 14px;
-      @media screen and (max-width: 767px){
+      @media screen and (max-width: 767px) {
         font-size: 8px;
       }
     }
@@ -287,54 +350,12 @@
       .data-box-content {
         height: 100%;
         padding-top: $data-content-padding-inside-box;
-        .severities-chart-container {
-          height: calc(100% - (#{$data-content-padding-inside-box} * 3) - ((#{$attacks-dashboard-text-size} + #{$div-text-automatic-padding}) * 2));
-          height: -webkit-calc(100% - (#{$data-content-padding-inside-box} * 3) - ((#{$attacks-dashboard-text-size} + #{$div-text-automatic-padding}) * 2));
-          height: -moz-calc(100% - (#{$data-content-padding-inside-box} * 3) - ((#{$attacks-dashboard-text-size} + #{$div-text-automatic-padding}) * 2));
-          height: -o-calc(100% - (#{$data-content-padding-inside-box} * 3) - ((#{$attacks-dashboard-text-size} + #{$div-text-automatic-padding}) * 2));
-          position: relative;
-          @media screen and (max-width: 767px) {
-            height: calc(100% - (#{$data-content-padding-inside-box} * 3) - ((#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding}) * 2));
-            height: -webkit-calc(100% - (#{$data-content-padding-inside-box} * 3) - ((#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding}) * 2));
-            height: -moz-calc(100% - (#{$data-content-padding-inside-box} * 3) - ((#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding}) * 2));
-            height: -o-calc(100% - (#{$data-content-padding-inside-box} * 3) - ((#{$attacks-dashboard-mobile-text-size} + #{$div-text-mobile-automatic-padding}) * 2));
-          }
-          .severities-chart {
-            width: 100%;
-          }
-        }
       }
     }
   }
 }
 
-.centralize-element-horizontally-vertically {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-}
 
-.centralize-element-vertically {
-  position: absolute;
-  top: 50%;
-  transform: translate(0%, -50%);
-  -webkit-transform: translate(0%, -50%);
-  -moz-transform: translate(0%, -50%);
-  -o-transform: translate(0%, -50%);
-}
-
-.centralize-element-horizontally {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, 0%);
-  -webkit-transform: translate(-50%, -0%);
-  -moz-transform: translate(-50%, -0%);
-  -o-transform: translate(-50%, -0%);
-}
 
 
 
