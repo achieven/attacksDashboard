@@ -4,7 +4,6 @@ const tscConfig = require('./tsconfig.json');
 const sass   = require('gulp-sass');
 const gutil = require('gulp-util');
 
-// create a default task and just log a message
 gulp.task('default', ['compile', 'build-css', 'watch'], function() {
     return gutil.log('Gulp is running!')
 });
