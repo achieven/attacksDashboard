@@ -22,6 +22,6 @@ To run tests:
 If you already deployed it and just want to run the app:   
 npm run startDev    
         
-        ![alt text](./client/assets/images/preview.png?raw=true)
+        ![preview](https://raw.githubusercontent.com/achieven/attacksDashboard/master/client/assets/images/preview.png)
 
 
