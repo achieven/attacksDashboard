@@ -15,6 +15,3 @@ app.use('/css', express.static(__dirname + '/client/stylesheets/'))
 app.use('/images', express.static(__dirname + '/client/assets/images/'))
 app.use('/fonts', express.static(__dirname + '/client/assets/fonts/'))
 app.use('/', routes);
-
-
-module.exports = app;
