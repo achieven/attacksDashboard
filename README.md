@@ -20,7 +20,8 @@ To run tests:
 ./scripts/test   
 
 If you already deployed it and just want to run the app:   
-npm run startDev
-        ![alt text](images/preview.png)
+npm run startDev    
+        
+        ![alt text](images/preview.png?raw=true)
 
 
