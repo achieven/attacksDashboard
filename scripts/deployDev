@@ -1,2 +1,3 @@
 npm i
+npm run gulpCompile
 npm run startDev
